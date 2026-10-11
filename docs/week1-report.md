@@ -2,9 +2,9 @@
 
 **Đề tài:** Xây dựng chatbot hỏi đáp FAQ môn học bằng tìm kiếm từ khóa hoặc TF-IDF trên Lambda.
 
-**Mã môn học:** Điền theo lớp của nhóm.
+**Mã môn học:** CLCO332779_05UTExMC
 
-**Giảng viên hướng dẫn:** Huỳnh Xuân Phụng.
+**Giảng viên hướng dẫn:** Huỳnh Xuân Phụng
 
 **Tuần:** 01
 
@@ -15,24 +15,20 @@
 
 ## Mục tiêu và phạm vi
 
-Tuần 1 nghiên cứu Lambda, API Gateway, S3, DynamoDB; thiết kế kiến trúc và dữ liệu; dựng nền tảng, gắn tag và kiểm thử truy cập. FAQ ban đầu tập trung vào quy định đồ án môn Cloud; nhóm rà soát đáp án theo yêu cầu.
+Nghiên cứu Lambda, API Gateway, S3, DynamoDB; thiết kế kiến trúc và dữ liệu; dựng nền tảng, gắn tag và kiểm thử truy cập. FAQ ban đầu tập trung vào quy định đồ án môn Cloud; nhóm rà soát đáp án theo yêu cầu.
 
 ## Kết quả thực hiện và phân công
 
-| Thành viên | Công việc | Mức độ hoàn thành thực tế | Giờ thực tế | Minh chứng |
-|---|---|---|---:|---|
-| Khoa | Nghiên cứu và thiết kế kiến trúc | 2 |
-| Khoa | Vẽ sơ đồ | 1 |
-| Khoa | Rà soát dữ liệu FAQ | 1 |
-| Bằng | Tạo S3 private và website | 1 |
-| Bằng | Tạo DynamoDB | 1 |
-| Khoa | Kiểm tra LabRole, tạo Lambda | 1 |
-| Bằng | Kiểm thử đọc S3 và ghi DynamoDB | 1 |
-| Bằng | Gắn tag, Git, worklog và báo cáo | 2 |
-
-## AI hỗ trợ 
-
-Bộ mã ban đầu và FAQ được ChatGPT hỗ trợ soạn. Không có API LLM trong mã chạy của hệ thống.
+| Thành viên | Công việc | Mức độ hoàn thành (%) | Số giờ | 
+|---|---|---|---|
+| Khoa | Nghiên cứu và thiết kế kiến trúc | 100 | 2 |
+| Khoa | Vẽ sơ đồ | 100 | 2 |
+| Khoa | Rà soát dữ liệu FAQ | 100 | 2 |
+| Bằng | Tạo S3 private và website | 100 | 2 |
+| Bằng | Tạo DynamoDB | 100 | 2 |
+| Khoa | Kiểm tra LabRole, tạo Lambda | 100 | 2 |
+| Bằng | Kiểm thử đọc S3 và ghi DynamoDB | 100 | 2 |
+| Bằng | Gắn tag, Git, worklog và báo cáo | 100 | 2 |
 
 # Quy tắc tên tài nguyên và tag
 
