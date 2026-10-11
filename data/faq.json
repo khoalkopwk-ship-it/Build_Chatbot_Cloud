@@ -1,0 +1,306 @@
+[
+  {
+    "id": "FAQ001",
+    "question": "Đề tài chatbot cần xây dựng chức năng gì?",
+    "answer": "Xây dựng chatbot hỏi đáp FAQ môn học dựa trên tìm kiếm từ khóa hoặc TF-IDF chạy trên Lambda.",
+    "keywords": [
+      "chatbot",
+      "faq",
+      "môn học",
+      "chức năng"
+    ],
+    "category": "Phạm vi",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ002",
+    "question": "Hệ thống phải sử dụng những dịch vụ AWS nào?",
+    "answer": "Các dịch vụ của đề tài là Lambda, API Gateway, S3 và DynamoDB.",
+    "keywords": [
+      "dịch vụ",
+      "lambda",
+      "api gateway",
+      "s3",
+      "dynamodb"
+    ],
+    "category": "Kiến trúc",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ003",
+    "question": "Kho FAQ cần được lưu ở đâu?",
+    "answer": "Kho FAQ được lưu trên Amazon S3 dưới dạng JSON hoặc CSV.",
+    "keywords": [
+      "kho faq",
+      "s3",
+      "json",
+      "csv"
+    ],
+    "category": "Dữ liệu",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ004",
+    "question": "Thành phần nào tìm kiếm FAQ và trả lời?",
+    "answer": "Lambda thực thi thuật toán tìm kiếm FAQ và trả kết quả qua API Gateway.",
+    "keywords": [
+      "tìm kiếm",
+      "trả lời",
+      "lambda"
+    ],
+    "category": "Kiến trúc",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ005",
+    "question": "Giao diện chat được triển khai ở đâu?",
+    "answer": "Giao diện chat là website tĩnh được triển khai trên S3.",
+    "keywords": [
+      "giao diện",
+      "website",
+      "web tĩnh",
+      "s3"
+    ],
+    "category": "Kiến trúc",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ006",
+    "question": "Câu hỏi được ghi log vào đâu?",
+    "answer": "Câu hỏi được ghi log vào DynamoDB để phục vụ thống kê.",
+    "keywords": [
+      "log",
+      "câu hỏi",
+      "dynamodb",
+      "thống kê"
+    ],
+    "category": "Dữ liệu",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ007",
+    "question": "Hệ thống có được gọi API LLM bên ngoài không?",
+    "answer": "Không. Hệ thống không được gọi API LLM bên ngoài khi chạy.",
+    "keywords": [
+      "llm",
+      "api",
+      "ai bên ngoài"
+    ],
+    "category": "Quy định",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ008",
+    "question": "Nhóm có được dùng ChatGPT để tham khảo và sinh mã không?",
+    "answer": "Được dùng LLM hoặc AI để tham khảo, sinh mã và gỡ lỗi; phải ghi rõ phần AI hỗ trợ và giải thích được cấu hình, mã nguồn.",
+    "keywords": [
+      "chatgpt",
+      "ai hỗ trợ",
+      "sinh mã",
+      "gỡ lỗi"
+    ],
+    "category": "Quy định",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ009",
+    "question": "Thuật toán tìm kiếm FAQ do ai cài đặt?",
+    "answer": "Thuật toán tìm kiếm phải do nhóm tự cài đặt.",
+    "keywords": [
+      "thuật toán",
+      "tự cài đặt",
+      "tf-idf"
+    ],
+    "category": "Quy định",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ010",
+    "question": "Nhóm có tối đa bao nhiêu sinh viên?",
+    "answer": "Nhóm có tối đa 2 sinh viên.",
+    "keywords": [
+      "nhóm",
+      "sinh viên",
+      "thành viên"
+    ],
+    "category": "Quy định",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ011",
+    "question": "Thời gian hoàn thành đề tài là bao lâu?",
+    "answer": "Đề tài được thực hiện trong 4 tuần.",
+    "keywords": [
+      "thời gian",
+      "4 tuần",
+      "kế hoạch"
+    ],
+    "category": "Tiến độ",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ012",
+    "question": "Mỗi sinh viên cần làm bao nhiêu giờ mỗi tuần?",
+    "answer": "Mỗi sinh viên cần làm ít nhất 8 giờ mỗi tuần.",
+    "keywords": [
+      "giờ",
+      "8 giờ",
+      "mỗi tuần"
+    ],
+    "category": "Tiến độ",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ013",
+    "question": "Nhóm cần làm những công việc gì trong tuần 1?",
+    "answer": "Tuần 1 tìm hiểu dịch vụ, thiết kế kiến trúc, vẽ sơ đồ, dựng nền tảng phù hợp với đề tài và gắn tag.",
+    "keywords": [
+      "tuần 1",
+      "kiến trúc",
+      "nền tảng",
+      "tag"
+    ],
+    "category": "Tiến độ",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ014",
+    "question": "Nhóm cần làm những công việc gì trong tuần 2?",
+    "answer": "Tuần 2 triển khai chức năng lõi trên AWS và kiểm thử từng thành phần.",
+    "keywords": [
+      "tuần 2",
+      "chức năng lõi",
+      "kiểm thử"
+    ],
+    "category": "Tiến độ",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ015",
+    "question": "Nhóm cần làm những công việc gì trong tuần 3?",
+    "answer": "Tuần 3 tích hợp, bảo mật, giám sát bằng CloudWatch và tự động hóa hoặc IaC nếu có.",
+    "keywords": [
+      "tuần 3",
+      "bảo mật",
+      "cloudwatch",
+      "tích hợp"
+    ],
+    "category": "Tiến độ",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ016",
+    "question": "Nhóm cần làm những công việc gì trong tuần 4?",
+    "answer": "Tuần 4 kiểm thử tổng thể, tối ưu chi phí, dọn dẹp tài nguyên, viết báo cáo và demo.",
+    "keywords": [
+      "tuần 4",
+      "chi phí",
+      "demo",
+      "dọn dẹp"
+    ],
+    "category": "Tiến độ",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ017",
+    "question": "Nhóm được sử dụng những Region nào?",
+    "answer": "Nhóm chỉ sử dụng us-east-1 hoặc us-west-2.",
+    "keywords": [
+      "region",
+      "khu vực",
+      "us-east-1",
+      "us-west-2"
+    ],
+    "category": "Quy định",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ018",
+    "question": "Nhóm có được tạo IAM user hoặc role mới không?",
+    "answer": "Không. Nhóm dùng LabRole hoặc LabInstanceProfile được cung cấp, không tạo IAM user hoặc role mới.",
+    "keywords": [
+      "iam",
+      "labrole",
+      "role",
+      "user"
+    ],
+    "category": "Quy định",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ019",
+    "question": "Các tài nguyên phải có những tag nào?",
+    "answer": "Các tài nguyên dự án phải được gắn tag Project và Owner.",
+    "keywords": [
+      "tag",
+      "project",
+      "owner"
+    ],
+    "category": "Quy định",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ020",
+    "question": "Nhật ký công việc hằng tuần cần ghi gì?",
+    "answer": "Worklog hằng tuần phải ghi rõ phân công và số giờ thực tế của từng sinh viên.",
+    "keywords": [
+      "worklog",
+      "nhật ký",
+      "phân công",
+      "số giờ"
+    ],
+    "category": "Minh chứng",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ021",
+    "question": "Ảnh minh chứng cần thể hiện những thông tin nào?",
+    "answer": "Ảnh console hoặc CLI cần thể hiện Account ID, Region và thời gian thực hiện.",
+    "keywords": [
+      "ảnh",
+      "minh chứng",
+      "account id",
+      "region",
+      "thời gian"
+    ],
+    "category": "Minh chứng",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ022",
+    "question": "Video demo được dài tối đa bao nhiêu phút?",
+    "answer": "Video demo dài tối đa 10 phút.",
+    "keywords": [
+      "video",
+      "demo",
+      "10 phút"
+    ],
+    "category": "Minh chứng",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ023",
+    "question": "Tài nguyên phải được triển khai ở đâu?",
+    "answer": "Mọi tài nguyên của hệ thống phải được triển khai và chạy thật trên AWS Learner Lab.",
+    "keywords": [
+      "triển khai",
+      "chạy thật",
+      "learner lab"
+    ],
+    "category": "Quy định",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ024",
+    "question": "Nhóm cần làm gì sau mỗi buổi thực hành?",
+    "answer": "Nhóm phải dừng hoặc xóa tài nguyên theo yêu cầu đề tài và báo cáo chi phí sử dụng cuối kỳ.",
+    "keywords": [
+      "kết thúc",
+      "dừng",
+      "xóa",
+      "chi phí"
+    ],
+    "category": "Quy định",
+    "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  }
+]

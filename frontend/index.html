@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chatbot FAQ môn học — Tuần 1</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 16px/1.6 system-ui, sans-serif; color: #183248; background: #f2f6fa; }
+    main { max-width: 780px; margin: 48px auto; padding: 28px; background: white; border-radius: 16px; border: 1px solid #d8e3eb; }
+    h1 { margin: 0 0 12px; font-size: 28px; line-height: 1.3; }
+    .phase { color: #346b8f; font-weight: 600; margin: 0 0 8px; }
+    label { display: block; font-weight: 600; margin-bottom: 8px; }
+    textarea { display: block; width: 100%; padding: 12px; min-height: 110px; font: inherit; border: 1px solid #a7bac9; border-radius: 8px; }
+    button { margin-top: 14px; background: #155c8c; color: white; border: 0; padding: 12px 18px; border-radius: 8px; font: inherit; cursor: pointer; }
+    button:disabled { opacity: .6; cursor: wait; }
+    textarea:focus-visible, button:focus-visible { outline: 3px solid #83c4ec; outline-offset: 3px; }
+    #status { min-height: 26px; margin-bottom: 8px; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 16px; background: #f4f7fa; border-radius: 8px; font-size: 14px; }
+    small { display: block; margin-top: 24px; color: #526a7d; }
+    @media (max-width: 600px) { main { margin: 16px; padding: 20px; } h1 { font-size: 24px; } }
+  </style>
+  <script defer src="config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main>
+    <p class="phase">Điện toán đám mây · Báo cáo tuần 1</p>
+    <h1>Chatbot FAQ môn học</h1>
+    <p>Trang này kiểm thử đường truyền tới AWS và khả năng đọc kho FAQ, ghi log.
+       Chức năng tìm kiếm câu trả lời sẽ được triển khai ở tuần 2.</p>
+    <form id="test-form">
+      <label for="question">Câu hỏi thử nghiệm</label>
+      <textarea id="question" maxlength="500" required placeholder="Nhóm được sử dụng những Region nào?"></textarea>
+      <button id="submit" type="submit">Kiểm thử kết nối AWS</button>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+    <pre id="result" hidden></pre>
+    <small>Không nhập thông tin nhạy cảm. Câu hỏi thử được lưu trong DynamoDB với loại infrastructure_test.</small>
+  </main>
+</body>
+</html>
