@@ -23,11 +23,12 @@ Nghiên cứu Lambda, API Gateway, S3, DynamoDB; thiết kế kiến trúc và d
 |---|---|---|---|
 | Khoa | Nghiên cứu và thiết kế kiến trúc | 100 | 2 |
 | Khoa | Vẽ sơ đồ | 100 | 2 |
-| Khoa | Rà soát dữ liệu FAQ | 100 | 2 |
+| Khoa | Rà soát dữ liệu FAQ | 100 | 1 |
 | Bằng | Tạo S3 private và website | 100 | 2 |
 | Bằng | Tạo DynamoDB | 100 | 2 |
 | Khoa | Kiểm tra LabRole, tạo Lambda | 100 | 2 |
 | Bằng | Kiểm thử đọc S3 và ghi DynamoDB | 100 | 2 |
+| Khoa | Tạo API và kiểm thử trình duyệt nếu đã làm | 100 | 1 |
 | Bằng | Gắn tag, Git, worklog và báo cáo | 100 | 2 |
 
 # Quy tắc tên tài nguyên và tag
