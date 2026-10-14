@@ -1,42 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chatbot FAQ môn học — Tuần 1</title>
-  <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font: 16px/1.6 system-ui, sans-serif; color: #183248; background: #f2f6fa; }
-    main { max-width: 780px; margin: 48px auto; padding: 28px; background: white; border-radius: 16px; border: 1px solid #d8e3eb; }
-    h1 { margin: 0 0 12px; font-size: 28px; line-height: 1.3; }
-    .phase { color: #346b8f; font-weight: 600; margin: 0 0 8px; }
-    label { display: block; font-weight: 600; margin-bottom: 8px; }
-    textarea { display: block; width: 100%; padding: 12px; min-height: 110px; font: inherit; border: 1px solid #a7bac9; border-radius: 8px; }
-    button { margin-top: 14px; background: #155c8c; color: white; border: 0; padding: 12px 18px; border-radius: 8px; font: inherit; cursor: pointer; }
-    button:disabled { opacity: .6; cursor: wait; }
-    textarea:focus-visible, button:focus-visible { outline: 3px solid #83c4ec; outline-offset: 3px; }
-    #status { min-height: 26px; margin-bottom: 8px; }
-    pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 16px; background: #f4f7fa; border-radius: 8px; font-size: 14px; }
-    small { display: block; margin-top: 24px; color: #526a7d; }
-    @media (max-width: 600px) { main { margin: 16px; padding: 20px; } h1 { font-size: 24px; } }
-  </style>
-  <script defer src="config.js"></script>
-  <script defer src="app.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course FAQ Chatbot | Serverless</title>
+  <meta name="description" content="Chatbot hỏi đáp FAQ môn học trên AWS Lambda, S3, API Gateway và DynamoDB; tìm kiếm TF-IDF.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <p class="phase">Điện toán đám mây · Báo cáo tuần 1</p>
-    <h1>Chatbot FAQ môn học</h1>
-    <p>Trang này kiểm thử đường truyền tới AWS và khả năng đọc kho FAQ, ghi log.
-       Chức năng tìm kiếm câu trả lời sẽ được triển khai ở tuần 2.</p>
-    <form id="test-form">
-      <label for="question">Câu hỏi thử nghiệm</label>
-      <textarea id="question" maxlength="500" required placeholder="Nhóm được sử dụng những Region nào?"></textarea>
-      <button id="submit" type="submit">Kiểm thử kết nối AWS</button>
-    </form>
-    <p id="status" role="status" aria-live="polite"></p>
-    <pre id="result" hidden></pre>
-    <small>Không nhập thông tin nhạy cảm. Câu hỏi thử được lưu trong DynamoDB với loại infrastructure_test.</small>
-  </main>
+  <div class="app-layout" id="appLayout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <span class="brand-name">Course FAQ Chatbot</span>
+        </div>
+        <button class="text-btn" id="collapseSidebarBtn" title="Thu gọn menu">Đóng</button>
+      </div>
+
+      <div class="sidebar-action">
+        <button class="new-chat-btn" id="newChatBtn">
+          <span>+ Đoạn chat mới</span>
+        </button>
+      </div>
+
+      <div class="sidebar-section-title">GẦN ĐÂY</div>
+      <div class="chat-history-list" id="chatHistoryList" aria-label="Các cuộc hội thoại trong phiên này">
+        <p class="history-empty">Chưa có cuộc hội thoại</p>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">U</div>
+          <div class="user-info">
+            <span class="user-name">Nhóm Serverless</span>
+            <span class="user-plan">AWS Learner Lab</span>
+          </div>
+        </div>
+        <span class="sidebar-note" title="Lịch sử hiển thị trong phiên trình duyệt hiện tại">Phiên hiện tại</span>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Bar -->
+      <header class="top-nav">
+        <div class="nav-left">
+          <button class="text-btn mobile-menu-btn" id="openSidebarBtn" title="Mở menu">Menu</button>
+          
+          <div class="mode-label" title="Tìm kiếm từ khóa/TF-IDF tự cài đặt, không gọi LLM">
+            FAQ môn học <span class="mode-separator">/</span> TF-IDF
+          </div>
+        </div>
+
+        <div class="nav-right">
+          <span class="api-state" id="apiStatus" role="status" aria-live="polite">Chưa kiểm tra API</span>
+          <button class="action-btn" id="healthBtn" title="Kiểm tra kết nối GET /health">
+            <span>Kiểm tra API</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Chat Container -->
+      <div class="chat-viewport" id="chatViewport">
+        <!-- Hero / Welcome View -->
+        <section class="welcome-screen" id="welcomeScreen">
+          <div class="welcome-center">
+            <h1 class="welcome-title">Hỏi đáp tài liệu môn học</h1>
+            <p class="welcome-sub">Nhập câu hỏi hoặc chọn gợi ý bên dưới. Câu trả lời được tra cứu từ bộ FAQ trên Amazon S3, không sử dụng LLM.</p>
+
+            <!-- Quick Prompts Grid -->
+            <div class="prompt-suggestions">
+              <button class="prompt-chip" data-prompt="AWS Lambda là gì?">
+                <span class="chip-text">AWS Lambda là gì?</span>
+              </button>
+              <button class="prompt-chip" data-prompt="Amazon S3 dùng để làm gì?">
+                <span class="chip-text">Amazon S3 dùng để làm gì?</span>
+              </button>
+              <button class="prompt-chip" data-prompt="API Gateway có chức năng gì?">
+                <span class="chip-text">API Gateway có chức năng gì?</span>
+              </button>
+              <button class="prompt-chip" data-prompt="TF-IDF là gì?">
+                <span class="chip-text">TF-IDF là gì?</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Messages Stream -->
+        <div class="messages-container" id="messagesContainer" style="display: none;">
+          <!-- Dynamically populated messages will appear here -->
+        </div>
+      </div>
+
+      <!-- Bottom Chat Bar Area -->
+      <footer class="input-section">
+        <div class="input-card">
+          <div class="input-pill-toolbar" aria-label="Nguồn dữ liệu">
+            <span class="source-chip">Nguồn: FAQ trên Amazon S3</span>
+            <span class="source-chip">Tìm kiếm: TF-IDF + Cosine Similarity</span>
+          </div>
+
+          <!-- Input Row -->
+          <div class="input-row">
+            <textarea 
+              id="chatInput" 
+              placeholder="Nhập câu hỏi về môn học..."
+              maxlength="500"
+              aria-label="Câu hỏi gửi chatbot" 
+              rows="1"
+              autofocus
+            ></textarea>
+
+            <div class="input-actions-right">
+              <!-- Send Button -->
+              <button class="send-btn" id="sendBtn" title="Gửi (Enter)">
+                Gửi
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-disclaimer">
+          Chatbot chọn câu trả lời trong FAQ bằng TF-IDF; không sử dụng API LLM. Câu hỏi gửi lên hệ thống có thể được lưu vào DynamoDB để thống kê.
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
