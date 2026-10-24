@@ -1,0 +1,16 @@
+{
+  "version": "2.0",
+  "routeKey": "POST /chat",
+  "rawPath": "/chat",
+  "headers": {
+    "content-type": "application/json"
+  },
+  "requestContext": {
+    "http": {
+      "method": "POST",
+      "path": "/chat"
+    }
+  },
+  "body": "{\"question\": \"Hôm nay trời mưa không?\"}",
+  "isBase64Encoded": false
+}
