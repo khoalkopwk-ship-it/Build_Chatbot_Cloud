@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       throw new Error('Chưa cấu hình API. Mở config.js và điền Invoke URL thật của course-faq-api.');
     }
     if (!/^https:\/\/[a-zA-Z0-9.-]+(?::\d+)?(?:\/[^?#]*)?$/.test(value) &&
-        !/^http:\/\/localhost(?::\d+)?(?:\/[^?#]*)?$/.test(value)) {
+      !/^http:\/\/localhost(?::\d+)?(?:\/[^?#]*)?$/.test(value)) {
       throw new Error('Invoke URL không hợp lệ. Cần URL HTTPS của API Gateway.');
     }
     const base = value.replace(/\/+$/, '');

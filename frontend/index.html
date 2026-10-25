@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Course FAQ Chatbot | Serverless</title>
-  <meta name="description" content="Chatbot hỏi đáp FAQ môn học trên AWS Lambda, S3, API Gateway và DynamoDB; tìm kiếm TF-IDF.">
+  <meta name="description"
+    content="Chatbot hỏi đáp FAQ môn học trên AWS Lambda, S3, API Gateway và DynamoDB; tìm kiếm TF-IDF.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="app-layout" id="appLayout">
     <!-- Sidebar -->
@@ -50,7 +55,7 @@
       <header class="top-nav">
         <div class="nav-left">
           <button class="text-btn mobile-menu-btn" id="openSidebarBtn" title="Mở menu">Menu</button>
-          
+
           <div class="mode-label" title="Tìm kiếm từ khóa/TF-IDF tự cài đặt, không gọi LLM">
             FAQ môn học <span class="mode-separator">/</span> TF-IDF
           </div>
@@ -70,7 +75,8 @@
         <section class="welcome-screen" id="welcomeScreen">
           <div class="welcome-center">
             <h1 class="welcome-title">Hỏi đáp tài liệu môn học</h1>
-            <p class="welcome-sub">Nhập câu hỏi hoặc chọn gợi ý bên dưới. Câu trả lời được tra cứu từ bộ FAQ trên Amazon S3, không sử dụng LLM.</p>
+            <p class="welcome-sub">Nhập câu hỏi hoặc chọn gợi ý bên dưới. Câu trả lời được tra cứu từ bộ FAQ trên Amazon
+              S3, không sử dụng LLM.</p>
 
             <!-- Quick Prompts Grid -->
             <div class="prompt-suggestions">
@@ -106,14 +112,8 @@
 
           <!-- Input Row -->
           <div class="input-row">
-            <textarea 
-              id="chatInput" 
-              placeholder="Nhập câu hỏi về môn học..."
-              maxlength="500"
-              aria-label="Câu hỏi gửi chatbot" 
-              rows="1"
-              autofocus
-            ></textarea>
+            <textarea id="chatInput" placeholder="Nhập câu hỏi về môn học..." maxlength="500"
+              aria-label="Câu hỏi gửi chatbot" rows="1" autofocus></textarea>
 
             <div class="input-actions-right">
               <!-- Send Button -->
@@ -125,7 +125,8 @@
         </div>
 
         <div class="input-disclaimer">
-          Chatbot chọn câu trả lời trong FAQ bằng TF-IDF; không sử dụng API LLM. Câu hỏi gửi lên hệ thống có thể được lưu vào DynamoDB để thống kê.
+          Chatbot chọn câu trả lời trong FAQ bằng TF-IDF; không sử dụng API LLM. Câu hỏi gửi lên hệ thống có thể được
+          lưu vào DynamoDB để thống kê.
         </div>
       </footer>
     </main>
@@ -134,4 +135,5 @@
   <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
+
 </html>
