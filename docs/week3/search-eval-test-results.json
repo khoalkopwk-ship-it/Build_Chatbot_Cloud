@@ -1,0 +1,92 @@
+[
+  {
+    "threshold": 0.6,
+    "split": "test",
+    "question": "faq luu o dau",
+    "expectedFaqId": "FAQ003",
+    "predictedFaqId": "FAQ003",
+    "score": 0.8315,
+    "passed": true
+  },
+  {
+    "threshold": 0.6,
+    "split": "test",
+    "question": "Có được dùng ChatGPT sinh mã không?",
+    "expectedFaqId": "FAQ008",
+    "predictedFaqId": "FAQ008",
+    "score": 0.7215,
+    "passed": true
+  },
+  {
+    "threshold": 0.6,
+    "split": "test",
+    "question": "Sản phẩm có gọi LLM bên ngoài không?",
+    "expectedFaqId": "FAQ007",
+    "predictedFaqId": "FAQ007",
+    "score": 0.6022,
+    "passed": true
+  },
+  {
+    "threshold": 0.6,
+    "split": "test",
+    "question": "Can chup minh chung thong tin gi",
+    "expectedFaqId": "FAQ021",
+    "predictedFaqId": "FAQ021",
+    "score": 0.6304,
+    "passed": true
+  },
+  {
+    "threshold": 0.6,
+    "split": "test",
+    "question": "Tài nguyên cần chạy ở đâu?",
+    "expectedFaqId": "FAQ023",
+    "predictedFaqId": null,
+    "score": 0.5644,
+    "passed": false
+  },
+  {
+    "threshold": 0.6,
+    "split": "test",
+    "question": "Sau buổi thực hành phải làm gì?",
+    "expectedFaqId": "FAQ024",
+    "predictedFaqId": "FAQ024",
+    "score": 0.8277,
+    "passed": true
+  },
+  {
+    "threshold": 0.6,
+    "split": "test",
+    "question": "Khi nào đăng ký học lại?",
+    "expectedFaqId": null,
+    "predictedFaqId": null,
+    "score": 0.1657,
+    "passed": true
+  },
+  {
+    "threshold": 0.6,
+    "split": "test",
+    "question": "Cách nấu trà sữa?",
+    "expectedFaqId": null,
+    "predictedFaqId": null,
+    "score": 0.1775,
+    "passed": true
+  },
+  {
+    "threshold": 0.6,
+    "split": "test",
+    "question": "Lịch thi cuối kỳ tháng mấy?",
+    "expectedFaqId": null,
+    "predictedFaqId": null,
+    "score": 0.1505,
+    "passed": true
+  },
+  {
+    "threshold": 0.6,
+    "split": "test",
+    "question": "AWS Lambda là gì?",
+    "expectedFaqId": null,
+    "predictedFaqId": null,
+    "score": 0.2534,
+    "passed": true
+  }
+]

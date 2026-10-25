@@ -2,9 +2,15 @@
   "version": "2.0",
   "routeKey": "POST /chat",
   "rawPath": "/chat",
-  "requestContext": {
-    "http": {"method": "POST", "path": "/chat"}
+  "headers": {
+    "content-type": "application/json"
   },
-  "body": "{\"question\":\"Nhóm được sử dụng những Region nào?\"}",
+  "requestContext": {
+    "http": {
+      "method": "POST",
+      "path": "/chat"
+    }
+  },
+  "body": "{\"question\": \"Nhóm được sử dụng những Region nào?\"}",
   "isBase64Encoded": false
 }
