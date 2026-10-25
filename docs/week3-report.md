@@ -16,6 +16,31 @@
 | 24110253 | Đặng Nguyễn Minh Khoa | Nhóm trưởng |
 | 24110166 | Ngô Anh Bằng | Thành viên |
 
+### 1.1. Link commit tuần 3
+
+Ngày 25/10/2026, nhóm tổ chức lại lịch sử commit tuần 3 theo phạm vi công việc của từng thành viên. Các liên kết dưới đây thuộc lịch sử hiện tại trên nhánh `main`. Thời gian thực hiện công việc được ghi riêng tại mục 3 và mục 4.
+
+**Đặng Nguyễn Minh Khoa — 24110253 — GitHub: `khoalkopwk-ship-it`**
+
+| Commit | Nội dung được đưa lên Git |
+| --- | --- |
+| [1960a7b](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/commit/1960a7b46b70fd6c6def74a1b0a66edcb3c70a3d) | Cập nhật Lambda và test event; bổ sung tập đánh giá, script kiểm thử cục bộ, script đánh giá TF-IDF, kết quả dev/test và ảnh minh chứng lựa chọn ngưỡng. |
+| [0c04c85](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/commit/0c04c8506f962c52aebcd46bfecd22071b3fbca5) | Bổ sung định dạng API access log, script CLI giám sát và ảnh cấu hình logging, metric filter, alarm, thử lỗi DynamoDB và phục hồi. |
+| [e675741](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/commit/e675741016af255308a62d9bc27f083cfe75297d) | Bổ sung ảnh minh chứng Dashboard CloudWatch giám sát chatbot. |
+| [d7f25dc](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/commit/d7f25dc3a9acb845d6c2365991a1c8437a94e674) | Cập nhật S3 website policy; bổ sung ảnh cấu hình throttling, CORS và bảo vệ kho FAQ khỏi truy cập công khai. |
+| [7ba1945](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/commit/7ba1945d3217c391ded43eac397112565953a173) | Bổ sung frontend phần Bằng quên commit. |
+
+**Ngô Anh Bằng — 24110166 — GitHub: `bawgitne`**
+
+| Commit | Nội dung được đưa lên Git |
+| --- | --- |
+| [6bdc49c](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/commit/6bdc49c311b173f07bcd763731acf84a654ef21e) | Bổ sung ảnh kiểm thử frontend và CORS đúng origin. Commit này chỉ thêm ảnh minh chứng, chưa thay đổi mã frontend. |
+| [fb48cef](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/commit/fb48cef1faf9861676322fbb6401fd2c55ccc0b2) | Bổ sung hai ảnh đối soát cùng requestId giữa bản ghi DynamoDB và log Lambda trên CloudWatch. |
+| [ae3ba93](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/commit/ae3ba931eca4b06566d2548a213b70172122a1c7) | Bổ sung script kiểm thử API, file JSON kết quả thực tế và ảnh kiểm thử 13/13 ca đạt. |
+| [ce27b92](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/commit/ce27b927add77ed1135c21df7b78911edea893cc) | Bổ sung báo cáo tuần 3 và ảnh minh chứng Account, Region, thời gian của môi trường Learner Lab. |
+
+Các commit minh chứng phần mã nguồn, cấu hình và hồ sơ từng thành viên đã đưa lên Git. Các thao tác triển khai trên AWS được đối chiếu thêm bằng ảnh console/CLI và kết quả kiểm thử tại mục 3.
+
 ## 2. Mục tiêu tuần 3
 
 Tiếp tục hệ thống tuần 2, nhóm tập trung tích hợp, bảo mật, giám sát và tự động hóa kiểm thử: đánh giá ngưỡng TF-IDF; bổ sung nguồn trả lời và mã tra cứu; theo dõi yêu cầu qua API Gateway, Lambda và DynamoDB; giới hạn truy cập S3; cấu hình CORS, throttling, CloudWatch Logs, metric và alarm. Hệ thống tiếp tục tự cài đặt thuật toán tìm kiếm, không gọi API LLM bên ngoài.
@@ -53,7 +78,7 @@ Minh chứng:
 - So sánh các ngưỡng trên tập dev: https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week3/TFIDF_Week3_Dev_Threshold_Comparison.png
 - Kết quả đánh giá trên tập dev: https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/docs/week3/search-eval-dev-results.json
 - Kết quả đánh giá trên tập test: https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/docs/week3/search-eval-test-results.json
-git ls-remote origin refs/heads/main
+
 **Công việc 2: Thiết lập log có cấu trúc và cảnh báo lỗi ứng dụng**
 
 - **Thời gian:** 2 giờ.
@@ -119,8 +144,6 @@ Minh chứng:
 - Website trả lời và CORS đúng origin: https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week3/Frontend_Week3_CORS_Allowed.png
 - Mã frontend mới: https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/tree/main/frontend
 
-**Lưu ý đồng bộ mã nguồn:** ảnh website S3 chứng minh đã hiển thị nguồn và mã tra cứu. Tuy nhiên, `frontend/script.js` trên GitHub hiện chưa có xử lý `source` và `requestId`; cần cập nhật bản frontend đã triển khai lên repo. Liên kết thư mục trên dùng để đối chiếu trạng thái mã, chưa chứng minh bản Git đã khớp đầy đủ giao diện trong ảnh.
-
 **Công việc 2: Đối soát yêu cầu giữa API, Lambda và DynamoDB**
 
 - **Thời gian:** 2 giờ.
@@ -136,7 +159,7 @@ Minh chứng:
 **Công việc 3: Chạy bộ kiểm thử API trên AWS**
 
 - **Thời gian:** 1 giờ.
-- Chạy `scripts/test-api.py` từ thư mục kit trên máy tính, gọi HTTPS endpoint thật của API Gateway; lưu kết quả vào `docs/week3-api-results.json` của kit. Ảnh terminal thể hiện lệnh chạy, mã thoát `0` và bảng PASS; hai file này chưa có trên repository hiện tại.
+- Chạy `scripts/test-api.py` từ thư mục kit trên máy tính, gọi HTTPS endpoint thật của API Gateway; lưu kết quả vào `docs/week3-api-results.json`. Ảnh terminal thể hiện lệnh chạy, mã thoát `0` và bảng PASS.
 - Kết quả **13/13 ca đạt**, gồm hỏi đáp, câu không dấu, không khớp, đầu vào lỗi, giới hạn kích thước, route không tồn tại và CORS preflight.
 - Ảnh terminal ghi thời gian đối soát sau khi chạy là **01:14:59 ngày 25/10/2026 (UTC+7)**.
 
@@ -145,14 +168,15 @@ Minh chứng:
 - Kết quả kiểm thử API 13/13: https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week3/API_Week3_Automated_Test_Results.png
 - Test event HTTP có đáp án: https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/config/lambda-test-http.json
 - Test event câu không khớp: https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/config/lambda-test-unmatched.json
+- Script kiểm thử API: https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/scripts/week3/test-api.py
+- Kết quả kiểm thử API dạng JSON: https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/docs/week3/week3-api-results.json
 
 Hai test event hỗ trợ kiểm thử thủ công; kết quả 13/13 được minh chứng bằng ảnh chạy script ở trên.
 
 **Công việc 4: Tổng hợp minh chứng và chuẩn bị hồ sơ tuần 3**
 
 - **Thời gian:** 2 giờ.
-- Tổng hợp 24 ảnh trong `screenshots/week3/`; báo cáo liên kết trực tiếp 11 ảnh chính, các ảnh hỗ trợ còn lại nằm trong cùng thư mục.
-- Đưa mã Lambda, test event, S3 policy, định dạng API access log và báo cáo tuần 3 lên GitHub. Script/JSON đánh giá và bản frontend mới trên S3 còn cần đồng bộ để hoàn thiện hồ sơ mã nguồn.
+- Tổng hợp báo cáo, ảnh minh chứng trong `screenshots/week3/` và kết quả kiểm thử API; phối hợp với Khoa rà soát liên kết mã nguồn, cấu hình và kết quả đánh giá.
 - Tổng hợp phân công và số giờ của từng thành viên; cần bổ sung nhật ký chi tiết theo buổi và minh chứng tag tài nguyên giám sát mới trước khi nộp.
 
 Minh chứng:
@@ -211,6 +235,7 @@ Dòng log Lambda của ca `exact-FAQ017` ghi `durationMs=7964.59`, có thể đ�
 - API access log có retention 7 ngày; ảnh log group Lambda tại thời điểm tạo filter vẫn là **Never expire**.
 - Kho 24 FAQ chủ yếu phản ánh yêu cầu đề tài, chưa chứng minh bao phủ nội dung giáo trình/slide môn học. Cần bổ sung tài liệu được phép và ghi nguồn chương/trang/slide đúng thực tế.
 - Website S3 hiện dùng HTTP; CORS không phải cơ chế xác thực. Chưa có minh chứng đã thu hẹp quyền LabRole, triển khai IaC toàn hệ thống, đo chi phí hoặc dọn dẹp sau phiên này.
+- CORS đã giới hạn origin website S3, nhưng kết quả preflight còn cho phép DELETE, GET, HEAD, OPTIONS, PATCH, POST và PUT. Cần thu hẹp danh sách method theo nhu cầu thực tế GET/POST/OPTIONS.
 
 ## 6. Kế hoạch tuần 4
 
