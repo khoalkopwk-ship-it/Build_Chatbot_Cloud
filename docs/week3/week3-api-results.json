@@ -1,0 +1,253 @@
+{
+  "baseUrl": "https://tijvqgrltk.execute-api.us-east-1.amazonaws.com",
+  "origin": "http://course-faq-web-24110253.s3-website-us-east-1.amazonaws.com",
+  "runAt": "2026-10-24T18:14:19.858625+00:00",
+  "results": [
+    {
+      "case": "health",
+      "timestamp": "2026-10-24T18:13:52.415240+00:00",
+      "expectedStatus": 200,
+      "status": 200,
+      "passed": true,
+      "durationMs": 1262.12,
+      "requestId": "5058a816-b0e8-4aad-b2d6-2f232ea64992",
+      "apiRequestId": "FwtHFg_LoAMEPEQ=",
+      "payload": {
+        "status": "ok",
+        "message": "Course FAQ Chatbot API",
+        "requestId": "5058a816-b0e8-4aad-b2d6-2f232ea64992",
+        "apiRequestId": "FwtHFg_LoAMEPEQ=",
+        "build": "week3-v1"
+      },
+      "error": null
+    },
+    {
+      "case": "exact-FAQ017",
+      "timestamp": "2026-10-24T18:14:01.485556+00:00",
+      "expectedStatus": 200,
+      "status": 200,
+      "passed": true,
+      "durationMs": 8719.83,
+      "requestId": "5a4aa5a8-f815-4f0e-88a7-b0acb02ac62e",
+      "apiRequestId": "FwtHViCpIAMEPpg=",
+      "payload": {
+        "question": "Nhóm được sử dụng những Region nào?",
+        "matched": true,
+        "answer": "Nhóm chỉ sử dụng us-east-1 hoặc us-west-2.",
+        "matchedFaqId": "FAQ017",
+        "similarity": 1.0,
+        "threshold": 0.6,
+        "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng",
+        "category": "Quy định",
+        "faqCount": 24,
+        "faqETag": "\"c8c8dfb2bed0391bee71d11c81ba2cc8\"",
+        "logSaved": true,
+        "requestId": "5a4aa5a8-f815-4f0e-88a7-b0acb02ac62e",
+        "apiRequestId": "FwtHViCpIAMEPpg=",
+        "build": "week3-v1"
+      },
+      "error": null
+    },
+    {
+      "case": "no-accents",
+      "timestamp": "2026-10-24T18:14:02.916171+00:00",
+      "expectedStatus": 200,
+      "status": 200,
+      "passed": true,
+      "durationMs": 1079.81,
+      "requestId": "9398c1d2-c7ce-4a70-aa09-1cf0b0e4c72e",
+      "apiRequestId": "FwtIvimCoAMEPpw=",
+      "payload": {
+        "question": "nhom duoc su dung nhung region nao",
+        "matched": true,
+        "answer": "Nhóm chỉ sử dụng us-east-1 hoặc us-west-2.",
+        "matchedFaqId": "FAQ017",
+        "similarity": 1.0,
+        "threshold": 0.6,
+        "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng",
+        "category": "Quy định",
+        "faqCount": 24,
+        "faqETag": "\"c8c8dfb2bed0391bee71d11c81ba2cc8\"",
+        "logSaved": true,
+        "requestId": "9398c1d2-c7ce-4a70-aa09-1cf0b0e4c72e",
+        "apiRequestId": "FwtIvimCoAMEPpw=",
+        "build": "week3-v1"
+      },
+      "error": null
+    },
+    {
+      "case": "unmatched",
+      "timestamp": "2026-10-24T18:14:04.484887+00:00",
+      "expectedStatus": 200,
+      "status": 200,
+      "passed": true,
+      "durationMs": 1218.01,
+      "requestId": "458d3e15-b2c1-4fb0-b7ca-8e8e3891aab7",
+      "apiRequestId": "FwtI_h-goAMEZhw=",
+      "payload": {
+        "question": "Hôm nay trời mưa không?",
+        "matched": false,
+        "answer": "Mình chưa tìm thấy câu trả lời phù hợp trong tài liệu môn học.",
+        "matchedFaqId": null,
+        "similarity": 0.0,
+        "threshold": 0.6,
+        "source": null,
+        "category": null,
+        "faqCount": 24,
+        "faqETag": "\"c8c8dfb2bed0391bee71d11c81ba2cc8\"",
+        "logSaved": true,
+        "requestId": "458d3e15-b2c1-4fb0-b7ca-8e8e3891aab7",
+        "apiRequestId": "FwtI_h-goAMEZhw=",
+        "build": "week3-v1"
+      },
+      "error": null
+    },
+    {
+      "case": "empty",
+      "timestamp": "2026-10-24T18:14:06.038197+00:00",
+      "expectedStatus": 400,
+      "status": 400,
+      "passed": true,
+      "durationMs": 1202.8,
+      "requestId": "986ffdcc-fbbc-4f83-84a4-2aa242f78399",
+      "apiRequestId": "FwtJQiEOIAMEPqQ=",
+      "payload": {
+        "error": "Cần nhập câu hỏi",
+        "requestId": "986ffdcc-fbbc-4f83-84a4-2aa242f78399",
+        "apiRequestId": "FwtJQiEOIAMEPqQ=",
+        "build": "week3-v1"
+      },
+      "error": null
+    },
+    {
+      "case": "missing",
+      "timestamp": "2026-10-24T18:14:07.341103+00:00",
+      "expectedStatus": 400,
+      "status": 400,
+      "passed": true,
+      "durationMs": 952.57,
+      "requestId": "12a7de36-a61b-4c63-80f0-0ddc01a0a395",
+      "apiRequestId": "FwtJdjF7oAMEPXg=",
+      "payload": {
+        "error": "Cần nhập câu hỏi",
+        "requestId": "12a7de36-a61b-4c63-80f0-0ddc01a0a395",
+        "apiRequestId": "FwtJdjF7oAMEPXg=",
+        "build": "week3-v1"
+      },
+      "error": null
+    },
+    {
+      "case": "number",
+      "timestamp": "2026-10-24T18:14:08.846472+00:00",
+      "expectedStatus": 400,
+      "status": 400,
+      "passed": true,
+      "durationMs": 1155.1,
+      "requestId": "d7df19bd-5c59-4534-8727-8da8ad04f21d",
+      "apiRequestId": "FwtJsjJtoAMEZaQ=",
+      "payload": {
+        "error": "Cần nhập câu hỏi",
+        "requestId": "d7df19bd-5c59-4534-8727-8da8ad04f21d",
+        "apiRequestId": "FwtJsjJtoAMEZaQ=",
+        "build": "week3-v1"
+      },
+      "error": null
+    },
+    {
+      "case": "array",
+      "timestamp": "2026-10-24T18:14:10.177502+00:00",
+      "expectedStatus": 400,
+      "status": 400,
+      "passed": true,
+      "durationMs": 980.31,
+      "requestId": "d79821d9-b489-496b-8d0b-d54c7527c13d",
+      "apiRequestId": "FwtJ5hQeIAMEPVQ=",
+      "payload": {
+        "error": "Cần nhập câu hỏi",
+        "requestId": "d79821d9-b489-496b-8d0b-d54c7527c13d",
+        "apiRequestId": "FwtJ5hQeIAMEPVQ=",
+        "build": "week3-v1"
+      },
+      "error": null
+    },
+    {
+      "case": "too-long",
+      "timestamp": "2026-10-24T18:14:11.664026+00:00",
+      "expectedStatus": 400,
+      "status": 400,
+      "passed": true,
+      "durationMs": 1135.96,
+      "requestId": "757929e7-7b27-4992-9fca-d536379aef9f",
+      "apiRequestId": "FwtKIiMBIAMEZyQ=",
+      "payload": {
+        "error": "Câu hỏi tối đa 500 ký tự",
+        "requestId": "757929e7-7b27-4992-9fca-d536379aef9f",
+        "apiRequestId": "FwtKIiMBIAMEZyQ=",
+        "build": "week3-v1"
+      },
+      "error": null
+    },
+    {
+      "case": "bad-json",
+      "timestamp": "2026-10-24T18:14:12.989583+00:00",
+      "expectedStatus": 400,
+      "status": 400,
+      "passed": true,
+      "durationMs": 974.7,
+      "requestId": "e0794dfd-67b8-4601-835d-6def95c4df95",
+      "apiRequestId": "FwtKViVVoAMEP1Q=",
+      "payload": {
+        "error": "JSON không hợp lệ",
+        "requestId": "e0794dfd-67b8-4601-835d-6def95c4df95",
+        "apiRequestId": "FwtKViVVoAMEP1Q=",
+        "build": "week3-v1"
+      },
+      "error": null
+    },
+    {
+      "case": "too-large",
+      "timestamp": "2026-10-24T18:14:17.376604+00:00",
+      "expectedStatus": 413,
+      "status": 413,
+      "passed": true,
+      "durationMs": 4036.33,
+      "requestId": "aeb35c6e-8165-46a7-bef0-2e380a86fa65",
+      "apiRequestId": "FwtKkixHIAMEZiw=",
+      "payload": {
+        "error": "Request body quá lớn",
+        "requestId": "aeb35c6e-8165-46a7-bef0-2e380a86fa65",
+        "apiRequestId": "FwtKkixHIAMEZiw=",
+        "build": "week3-v1"
+      },
+      "error": null
+    },
+    {
+      "case": "unknown-route",
+      "timestamp": "2026-10-24T18:14:18.626565+00:00",
+      "expectedStatus": 404,
+      "status": 404,
+      "passed": true,
+      "durationMs": 899.67,
+      "requestId": null,
+      "apiRequestId": null,
+      "payload": {
+        "message": "Not Found"
+      },
+      "error": null
+    },
+    {
+      "case": "cors-preflight",
+      "status": 204,
+      "passed": true,
+      "headers": {
+        "date": "Sat, 24 Oct 2026 18:14:19 GMT",
+        "connection": "close",
+        "access-control-allow-origin": "http://course-faq-web-24110253.s3-website-us-east-1.amazonaws.com",
+        "access-control-allow-methods": "DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT",
+        "access-control-allow-headers": "content-type",
+        "access-control-max-age": "300",
+        "apigw-requestid": "FwtLaj3-IAMEZyg="
+      }
+    }
+  ]
+}
