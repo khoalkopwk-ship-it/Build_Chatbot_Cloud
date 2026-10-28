@@ -302,5 +302,332 @@
     ],
     "category": "Quy định",
     "source": "Yêu cầu đề tài môn học do giảng viên cung cấp — bản nhóm đang sử dụng"
+  },
+  {
+    "id": "FAQ025",
+    "question": "Điện toán đám mây là gì?",
+    "answer": "Điện toán đám mây (cloud computing) là mô hình cung cấp tài nguyên CNTT như máy chủ, lưu trữ và cơ sở dữ liệu qua mạng theo nhu cầu, giúp người dùng không phải tự vận hành toàn bộ hạ tầng vật lý.",
+    "keywords": [
+      "cloud computing",
+      "điện toán đám mây",
+      "tài nguyên theo nhu cầu"
+    ],
+    "category": "Khái niệm Cloud",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ026",
+    "question": "Ba mô hình dịch vụ IaaS, PaaS và SaaS khác nhau thế nào?",
+    "answer": "IaaS cung cấp hạ tầng như máy ảo và mạng; PaaS cung cấp nền tảng để phát triển, triển khai ứng dụng; SaaS cung cấp ứng dụng hoàn chỉnh cho người dùng qua mạng. Mỗi mô hình phân chia trách nhiệm quản lý khác nhau.",
+    "keywords": [
+      "iaas",
+      "paas",
+      "saas",
+      "mô hình dịch vụ cloud"
+    ],
+    "category": "Mô hình dịch vụ",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ027",
+    "question": "IaaS là gì?",
+    "answer": "IaaS (Infrastructure as a Service) cung cấp tài nguyên hạ tầng như máy ảo, lưu trữ và mạng. Khách hàng thường quản lý hệ điều hành và phần mềm của mình, còn nhà cung cấp quản lý hạ tầng vật lý.",
+    "keywords": [
+      "iaas",
+      "infrastructure as a service",
+      "hạ tầng dưới dạng dịch vụ"
+    ],
+    "category": "Mô hình dịch vụ",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ028",
+    "question": "PaaS là gì?",
+    "answer": "PaaS (Platform as a Service) cung cấp nền tảng và môi trường triển khai ứng dụng, giúp nhà phát triển tập trung vào mã nguồn thay vì trực tiếp quản lý phần lớn hệ điều hành và hạ tầng.",
+    "keywords": [
+      "paas",
+      "platform as a service",
+      "nền tảng dưới dạng dịch vụ"
+    ],
+    "category": "Mô hình dịch vụ",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ029",
+    "question": "SaaS là gì?",
+    "answer": "SaaS (Software as a Service) cung cấp phần mềm hoàn chỉnh qua mạng. Người dùng chủ yếu sử dụng và cấu hình ứng dụng, còn nhà cung cấp vận hành phần mềm và hạ tầng bên dưới.",
+    "keywords": [
+      "saas",
+      "software as a service",
+      "phần mềm dưới dạng dịch vụ"
+    ],
+    "category": "Mô hình dịch vụ",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ030",
+    "question": "Public Cloud là gì?",
+    "answer": "Public Cloud là mô hình đám mây do nhà cung cấp cung cấp cho nhiều khách hàng qua hạ tầng dùng chung có cơ chế cách ly tài nguyên. Ví dụ: các dịch vụ công cộng của AWS.",
+    "keywords": [
+      "public cloud",
+      "đám mây công cộng"
+    ],
+    "category": "Mô hình triển khai",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ031",
+    "question": "Private Cloud là gì?",
+    "answer": "Private Cloud là môi trường đám mây được dành riêng cho một tổ chức; có thể đặt tại trung tâm dữ liệu của tổ chức hoặc được bên thứ ba vận hành.",
+    "keywords": [
+      "private cloud",
+      "đám mây riêng"
+    ],
+    "category": "Mô hình triển khai",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ032",
+    "question": "Hybrid Cloud là gì?",
+    "answer": "Hybrid Cloud kết hợp môi trường private cloud hoặc hạ tầng tại chỗ với public cloud, cho phép phối hợp dữ liệu và ứng dụng giữa các môi trường.",
+    "keywords": [
+      "hybrid cloud",
+      "đám mây lai",
+      "on premises"
+    ],
+    "category": "Mô hình triển khai",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ033",
+    "question": "Serverless là gì?",
+    "answer": "Serverless là mô hình trong đó nhà cung cấp dịch vụ quản lý việc cấp phát và vận hành máy chủ cho ứng dụng; nhà phát triển tập trung viết mã và cấu hình dịch vụ. Serverless không có nghĩa là không sử dụng máy chủ.",
+    "keywords": [
+      "serverless",
+      "phi máy chủ",
+      "quản lý server"
+    ],
+    "category": "Serverless",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ034",
+    "question": "AWS Lambda là gì?",
+    "answer": "AWS Lambda là dịch vụ điện toán serverless chạy mã theo sự kiện mà không cần tự quản lý máy chủ. Hàm Lambda có thể được gọi bởi API Gateway hoặc các dịch vụ AWS khác.",
+    "keywords": [
+      "lambda",
+      "aws lambda",
+      "function as a service",
+      "faas"
+    ],
+    "category": "AWS Lambda",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ035",
+    "question": "Amazon S3 là gì?",
+    "answer": "Amazon S3 (Simple Storage Service) là dịch vụ lưu trữ đối tượng trên AWS. Dữ liệu được lưu dưới dạng object bên trong bucket và có thể được truy cập theo quyền được cấp.",
+    "keywords": [
+      "s3",
+      "amazon s3",
+      "simple storage service",
+      "lưu trữ đối tượng"
+    ],
+    "category": "Amazon S3",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ036",
+    "question": "Trong Amazon S3, Bucket và Object khác nhau thế nào?",
+    "answer": "Bucket là vùng chứa các object trong Amazon S3. Object là đơn vị dữ liệu được lưu, gồm nội dung, khóa (key) và metadata; ví dụ faq.json là một object trong bucket dữ liệu của chatbot.",
+    "keywords": [
+      "bucket",
+      "object",
+      "key",
+      "s3 bucket"
+    ],
+    "category": "Amazon S3",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ037",
+    "question": "Amazon DynamoDB là gì?",
+    "answer": "Amazon DynamoDB là dịch vụ cơ sở dữ liệu NoSQL được AWS quản lý. DynamoDB lưu các item trong table và phù hợp với những ứng dụng cần truy xuất dữ liệu qua khóa với độ trễ thấp.",
+    "keywords": [
+      "dynamodb",
+      "nosql",
+      "database",
+      "table"
+    ],
+    "category": "Amazon DynamoDB",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ038",
+    "question": "Partition key trong DynamoDB dùng để làm gì?",
+    "answer": "Partition key là thuộc tính khóa dùng để phân phối và truy xuất item trong DynamoDB. Với bảng chỉ có partition key, giá trị khóa phải xác định duy nhất mỗi item; ví dụ chatbot dùng requestId.",
+    "keywords": [
+      "partition key",
+      "primary key",
+      "requestId",
+      "dynamodb"
+    ],
+    "category": "Amazon DynamoDB",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ039",
+    "question": "API Gateway có chức năng gì?",
+    "answer": "Amazon API Gateway là dịch vụ tạo, công bố và quản lý API. Trong chatbot FAQ, API Gateway nhận yêu cầu HTTP từ website, gọi Lambda và trả phản hồi về trình duyệt.",
+    "keywords": [
+      "api gateway",
+      "http api",
+      "rest api",
+      "endpoint"
+    ],
+    "category": "Amazon API Gateway",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ040",
+    "question": "HTTP GET và POST khác nhau thế nào?",
+    "answer": "GET thường dùng để lấy thông tin mà không yêu cầu thay đổi trạng thái tài nguyên; POST gửi dữ liệu để máy chủ xử lý hoặc tạo tài nguyên. Chatbot dùng GET /health để kiểm tra và POST /chat để gửi câu hỏi.",
+    "keywords": [
+      "http",
+      "get",
+      "post",
+      "method",
+      "request"
+    ],
+    "category": "Web và API",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ041",
+    "question": "AWS IAM là gì?",
+    "answer": "AWS IAM (Identity and Access Management) quản lý danh tính và quyền truy cập tài nguyên AWS thông qua các chính sách và vai trò. Trong Learner Lab, nhóm dùng LabRole được cấp sẵn theo quy định đề tài.",
+    "keywords": [
+      "iam",
+      "identity and access management",
+      "policy",
+      "role"
+    ],
+    "category": "Bảo mật AWS",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ042",
+    "question": "Amazon VPC là gì?",
+    "answer": "Amazon VPC (Virtual Private Cloud) là mạng ảo được định nghĩa trong AWS. VPC cho phép cấu hình dải địa chỉ IP, subnet, định tuyến và các biện pháp kiểm soát lưu lượng mạng.",
+    "keywords": [
+      "vpc",
+      "virtual private cloud",
+      "mạng ảo"
+    ],
+    "category": "Mạng AWS",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ043",
+    "question": "Subnet trong VPC là gì?",
+    "answer": "Subnet là một dải địa chỉ IP nằm trong VPC và thuộc một Availability Zone. Có thể thiết kế subnet công khai hoặc riêng tư tùy định tuyến và quyền truy cập.",
+    "keywords": [
+      "subnet",
+      "vpc",
+      "availability zone",
+      "mạng con"
+    ],
+    "category": "Mạng AWS",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ044",
+    "question": "Security Group là gì?",
+    "answer": "Security Group là tường lửa ảo có trạng thái để kiểm soát lưu lượng vào và ra của các tài nguyên AWS được hỗ trợ, chẳng hạn EC2 hoặc network interface trong VPC.",
+    "keywords": [
+      "security group",
+      "firewall",
+      "inbound",
+      "outbound"
+    ],
+    "category": "Bảo mật AWS",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ045",
+    "question": "Amazon CloudWatch dùng để làm gì?",
+    "answer": "Amazon CloudWatch thu thập metrics, logs và hỗ trợ cảnh báo để giám sát tài nguyên, ứng dụng AWS. Nhóm có thể dùng CloudWatch để xem thời gian chạy Lambda, số lỗi và yêu cầu API.",
+    "keywords": [
+      "cloudwatch",
+      "logs",
+      "metrics",
+      "alarm",
+      "monitoring"
+    ],
+    "category": "Giám sát",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ046",
+    "question": "CORS là gì và vì sao website chatbot cần cấu hình CORS?",
+    "answer": "CORS (Cross-Origin Resource Sharing) là cơ chế trình duyệt dựa trên HTTP header để quyết định có cho JavaScript đọc phản hồi từ origin khác hay không. Vì website S3 gọi API Gateway khác origin, API phải trả các header CORS phù hợp; CORS không thay thế xác thực.",
+    "keywords": [
+      "cors",
+      "access control allow origin",
+      "preflight",
+      "website"
+    ],
+    "category": "Web và API",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ047",
+    "question": "TF-IDF là gì?",
+    "answer": "TF-IDF (Term Frequency–Inverse Document Frequency) là cách gán trọng số cho từ dựa trên tần suất xuất hiện trong một văn bản và mức độ phổ biến của từ trên cả tập văn bản. Chatbot dùng trọng số này để biểu diễn câu hỏi.",
+    "keywords": [
+      "tf-idf",
+      "term frequency",
+      "inverse document frequency",
+      "trọng số từ"
+    ],
+    "category": "Thuật toán tìm kiếm",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ048",
+    "question": "TF trong TF-IDF biểu thị điều gì?",
+    "answer": "TF (Term Frequency) đo tần suất xuất hiện của một từ trong tài liệu. Một cách tính đơn giản là lấy số lần từ xuất hiện chia cho tổng số từ của tài liệu.",
+    "keywords": [
+      "tf",
+      "term frequency",
+      "tần suất từ"
+    ],
+    "category": "Thuật toán tìm kiếm",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ049",
+    "question": "IDF trong TF-IDF biểu thị điều gì?",
+    "answer": "IDF (Inverse Document Frequency) làm giảm trọng số của từ xuất hiện trong nhiều tài liệu và tăng vai trò các từ ít phổ biến hơn. Một công thức có làm trơn là log((N+1)/(df+1))+1.",
+    "keywords": [
+      "idf",
+      "inverse document frequency",
+      "nghịch đảo tần suất tài liệu"
+    ],
+    "category": "Thuật toán tìm kiếm",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
+  },
+  {
+    "id": "FAQ050",
+    "question": "Cosine Similarity là gì?",
+    "answer": "Cosine Similarity đo mức độ giống nhau về hướng giữa hai vector, bằng tích vô hướng chia cho tích độ dài của chúng. Chatbot so sánh vector TF-IDF của câu hỏi người dùng với các câu FAQ để chọn kết quả có điểm cao.",
+    "keywords": [
+      "cosine similarity",
+      "độ tương đồng cosine",
+      "vector",
+      "tf-idf"
+    ],
+    "category": "Thuật toán tìm kiếm",
+    "source": "Kiến thức nền tảng Điện toán đám mây do AI hỗ trợ biên soạn; cần đối chiếu slide/giáo trình trước khi nộp"
   }
 ]
