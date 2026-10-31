@@ -1,0 +1,152 @@
+[
+  {
+    "split": "dev",
+    "question": "nhom duoc su dung nhung region nao",
+    "expectedFaqId": "FAQ017"
+  },
+  {
+    "split": "dev",
+    "question": "Có được tạo IAM role mới không?",
+    "expectedFaqId": "FAQ018"
+  },
+  {
+    "split": "dev",
+    "question": "Video dài tối đa mấy phút?",
+    "expectedFaqId": "FAQ022"
+  },
+  {
+    "split": "dev",
+    "question": "Nhóm tối đa mấy sinh viên?",
+    "expectedFaqId": "FAQ010"
+  },
+  {
+    "split": "dev",
+    "question": "Câu hỏi lưu log ở đâu?",
+    "expectedFaqId": "FAQ006"
+  },
+  {
+    "split": "dev",
+    "question": "Những tag bắt buộc là gì?",
+    "expectedFaqId": "FAQ019"
+  },
+  {
+    "split": "dev",
+    "question": "AWS Lambda là gì?",
+    "expectedFaqId": "FAQ034"
+  },
+  {
+    "split": "dev",
+    "question": "Serverless là gì?",
+    "expectedFaqId": "FAQ025"
+  },
+  {
+    "split": "dev",
+    "question": "Cold start trong AWS Lambda là gì?",
+    "expectedFaqId": "FAQ035"
+  },
+  {
+    "split": "dev",
+    "question": "Amazon S3 dùng để làm gì trong kiến trúc?",
+    "expectedFaqId": "FAQ027"
+  },
+  {
+    "split": "dev",
+    "question": "Hôm nay trời mưa không?",
+    "expectedFaqId": null
+  },
+  {
+    "split": "dev",
+    "question": "Thời gian nghỉ tết là bao lâu?",
+    "expectedFaqId": null
+  },
+  {
+    "split": "dev",
+    "question": "Học phí môn học là bao nhiêu?",
+    "expectedFaqId": null
+  },
+  {
+    "split": "dev",
+    "question": "Giá vé xe buýt hôm nay?",
+    "expectedFaqId": null
+  },
+  {
+    "split": "dev",
+    "question": "Mua trà sữa trân châu ở đâu?",
+    "expectedFaqId": null
+  },
+  {
+    "split": "test",
+    "question": "faq luu o dau",
+    "expectedFaqId": "FAQ003"
+  },
+  {
+    "split": "test",
+    "question": "Có được dùng ChatGPT sinh mã không?",
+    "expectedFaqId": "FAQ008"
+  },
+  {
+    "split": "test",
+    "question": "Sản phẩm có gọi LLM bên ngoài không?",
+    "expectedFaqId": "FAQ007"
+  },
+  {
+    "split": "test",
+    "question": "Can chup minh chung thong tin gi",
+    "expectedFaqId": "FAQ021"
+  },
+  {
+    "split": "test",
+    "question": "Tài nguyên cần chạy ở đâu?",
+    "expectedFaqId": "FAQ023"
+  },
+  {
+    "split": "test",
+    "question": "Sau buổi thực hành phải làm gì?",
+    "expectedFaqId": "FAQ024"
+  },
+  {
+    "split": "test",
+    "question": "Định nghĩa lambda serverless aws",
+    "expectedFaqId": "FAQ034"
+  },
+  {
+    "split": "test",
+    "question": "Amazon API Gateway có vai trò gì?",
+    "expectedFaqId": "FAQ031"
+  },
+  {
+    "split": "test",
+    "question": "DynamoDB là cơ sở dữ liệu loại gì?",
+    "expectedFaqId": "FAQ038"
+  },
+  {
+    "split": "test",
+    "question": "CloudWatch Logs dùng để giám sát điều gì?",
+    "expectedFaqId": "FAQ042"
+  },
+  {
+    "split": "test",
+    "question": "Khi nào đăng ký học lại?",
+    "expectedFaqId": null
+  },
+  {
+    "split": "test",
+    "question": "Cách nấu trà sữa trân châu?",
+    "expectedFaqId": null
+  },
+  {
+    "split": "test",
+    "question": "Lịch thi cuối kỳ tháng mấy?",
+    "expectedFaqId": null
+  },
+  {
+    "split": "test",
+    "question": "Giá vàng hôm nay bao nhiêu?",
+    "expectedFaqId": null
+  },
+  {
+    "split": "test",
+    "question": "Thủ đô của nước Pháp là gì?",
+    "expectedFaqId": null
+  }
+]
