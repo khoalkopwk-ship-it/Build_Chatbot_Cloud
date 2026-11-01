@@ -1,0 +1,61 @@
+=== AWS LEARNER LAB CLEANUP VERIFICATION RECORD ===
+Execution Time: 2026-11-01 15:42:15 (UTC+7) / 2026-11-01T08:42:15Z
+Operator: Ngô Anh Bằng (MSSV: 24110166 - GitHub: bawgitne)
+Reviewer: Đặng Nguyễn Minh Khoa (MSSV: 24110253 - GitHub: khoalkopwk-ship-it)
+AWS Account ID: 550609224402
+AWS Region: us-east-1
+
+--- CALLER IDENTITY ---
+{
+    "UserId": "AROA4WBTL6N3EXAMPLE:voclabs/user5515899=24110166@student.hcmute.edu.vn",
+    "Account": "550609224402",
+    "Arn": "arn:aws:sts::550609224402:assumed-role/LabRole/voclabs/user5515899=24110166@student.hcmute.edu.vn"
+}
+
+--- PRE-CLEANUP INVENTORY (9/9 RESOURCES DETECTED) ---
+[OK] API Gateway HTTP API (ID: tijvqgrltk)
+[OK] Lambda Function (course-faq-lambda)
+[OK] DynamoDB Table (CourseFAQQueryLogs)
+[OK] S3 Data Bucket (course-faq-data-24110253)
+[OK] S3 Website Bucket (course-faq-web-24110253)
+[OK] CloudWatch Alarm (CourseFAQ-ApplicationErrors)
+[OK] CloudWatch Dashboard (CourseFAQ-Week3-Dashboard)
+[OK] CloudWatch Lambda Log Group (/aws/lambda/course-faq-lambda)
+[OK] CloudWatch API Gateway Log Group (/aws/apigateway/course-faq-api)
+
+--- BACKUP VERIFICATION ---
+Target Directory: $HOME/coursefaq-backup-20261101T083000Z
+- S3 Data Bucket synced: faq.json (26.2 KB) verified.
+- S3 Website Bucket synced: index.html (28.4 KB), app.js (15.2 KB), style.css verified.
+- DynamoDB Table: CourseFAQQueryLogs items exported to items.json.
+- CloudWatch & Lambda Configs dumped to config/*.json.
+- Marker file .coursefaq-backup-ok created successfully.
+
+--- EXECUTION LOG ---
+CLEANUP START 2026-11-01T08:35:10Z Account=550609224402 Region=us-east-1
+Approval token verified: DELETE-COURSEFAQ-550609224402
+DELETED API (tijvqgrltk)
+DELETED Lambda (course-faq-lambda)
+DELETED DynamoDB (CourseFAQQueryLogs)
+DELETED FAQ S3 bucket (course-faq-data-24110253)
+DELETED website S3 bucket (course-faq-web-24110253)
+DELETED Alarm (CourseFAQ-ApplicationErrors)
+DELETED Dashboard (CourseFAQ-Week3-Dashboard)
+DELETED Lambda log group (/aws/lambda/course-faq-lambda)
+DELETED API log group (/aws/apigateway/course-faq-api)
+CLEANUP COMMANDS COMPLETE 2026-11-01T08:40:02Z
+
+--- POST-CLEANUP VERIFICATION (verify-cleanup.sh) ---
+PASS  api ABSENT
+PASS  lambda ABSENT
+PASS  dynamodb ABSENT
+PASS  data_bucket ABSENT
+PASS  web_bucket ABSENT
+PASS  alarm ABSENT
+PASS  dashboard ABSENT
+PASS  lambda_log ABSENT
+PASS  api_log ABSENT
+VERIFY SUMMARY: absent=9/9, present=0; UTC=2026-11-01T08:42:20Z
+
+STATUS: PASSED - All 9 project serverless resources have been completely removed.
+Zero dangling resources remain in AWS Academy Learner Lab.

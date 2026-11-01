@@ -29,6 +29,8 @@ Toàn bộ các commit dưới đây đã được đẩy lên repository chính
 | `0e4af0f` | Ngô Anh Bằng (`bawgitne`) | 2026-10-28 16:15:32 | `test(week4): add Lambda and CloudWatch baseline evidence` | [0e4af0f](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/commit/0e4af0f) |
 | `bf50292` | Đặng Nguyễn Minh Khoa (`Koha`) | 2026-10-29 11:35:45 | `test(week4): add independent FAQ evaluation and API benchmark` | [bf50292](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/commit/bf50292) |
 | `b0d4f8e` | Đặng Nguyễn Minh Khoa (`Koha`) | 2026-10-30 15:42:19 | `docs(week4): analyze latency quality and AWS usage` | [b0d4f8e](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/commit/b0d4f8e) |
+| `25d4c87` | Đặng Nguyễn Minh Khoa (`Koha`) | 2026-10-31 16:45:20 | `ops(week4): add guarded AWS cleanup and verification` | [25d4c87](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/commit/25d4c87) |
+| `22943a3` | Ngô Anh Bằng (`bawgitne`) | 2026-11-01 15:30:10 | `evidence(week4): record actual AWS cleanup verification` | [Chi tiết minh chứng](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/docs/week4/cleanup-verification.txt) |
 
 ---
 
@@ -102,6 +104,20 @@ Chạy benchmark 12 lượt gọi liên tục bằng script `scripts/week4/bench
 - Dashboard AWS Academy Learner Lab ghi nhận tình trạng ngân sách (`used $0 of $100`): [`Week4_AWS_Learner_Lab_Budget.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_AWS_Learner_Lab_Budget.png)
 - Tài liệu chuyên sâu phân tích hiệu năng và định mức chi phí: https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/docs/week4/performance-and-cost.md
 
+### 3.6. Quy trình sao lưu, kiểm kê và dọn dẹp tài nguyên (Cleanup Procedure & Verification)
+- Nhóm đã xây dựng bộ công cụ kiểm kê, sao lưu và dọn dẹp tài nguyên có cơ chế bảo vệ hai lớp (`scripts/week4/`):
+  - `_aws_common.sh`: Kiểm tra ngữ cảnh tài khoản `550609224402`, Region `us-east-1` và các hàm nhận diện tài nguyên.
+  - `inventory-aws.sh`: Rà soát tình trạng 9 tài nguyên chính (API Gateway, Lambda, DynamoDB, 2 S3 buckets, CloudWatch Alarm, Dashboard, 2 Log Groups).
+  - `backup-before-cleanup.sh`: Tự động đồng bộ file FAQ S3, website tĩnh, xuất dữ liệu DynamoDB và cấu hình hệ thống ra thư mục sao lưu an toàn cục bộ trước khi cho phép xóa.
+  - `cleanup-aws.sh`: Cơ chế bảo vệ hai lớp (mặc định `--plan` chỉ đọc; cờ `--execute` bắt buộc kiểm tra thư mục backup hợp lệ và yêu cầu nhập chính xác mã xác nhận token `DELETE-COURSEFAQ-550609224402`).
+  - `verify-cleanup.sh`: Kiểm tra độc lập sau dọn dẹp, đảm bảo `absent=9/9`.
+- Kết quả kiểm chứng thực tế ghi nhận toàn bộ 9/9 tài nguyên đã được thu hồi sạch sẽ, không còn dịch vụ nào chạy ngầm làm hao hụt hạn mức 100 USD của AWS Academy Learner Lab.
+
+**Minh chứng quy trình và kết quả cleanup:**
+- Bộ kịch bản và hướng dẫn dọn dẹp an toàn: [`cleanup-guide.md`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/docs/week4/cleanup-guide.md), [`cleanup-checklist.md`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/docs/week4/cleanup-checklist.md)
+- Biên bản nghiệm thu giải phóng tài nguyên: [`cleanup-evidence-template.md`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/docs/week4/cleanup-evidence-template.md)
+- Nhật ký log kiểm chứng lệnh thực tế: [`cleanup-verification.txt`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/docs/week4/cleanup-verification.txt)
+
 ---
 
 ## 4. Danh Mục Toàn Bộ 12 Minh Chứng Ảnh AWS Tuần 4
@@ -138,7 +154,8 @@ Chi tiết toàn bộ 12 ảnh minh chứng thực tế trên AWS:
 | 6. Có nguồn tài liệu thật cho FAQ mới hoặc nêu rõ AI hỗ trợ | 26 FAQ mới đều ghi rõ nguồn hỗ trợ biên soạn trong trường `source` và đối chiếu giáo trình. | **ĐẠT** |
 | 7. Báo cáo chi phí/usage nêu rõ nguồn, không bịa số USD | Phân tích định mức lý thuyết rõ ràng, giải thích nguyên nhân SCP hạn chế Billing Console kèm ảnh chụp lỗi SCP và ngân sách $0/$100. | **ĐẠT** |
 | 8. Đảm bảo số giờ làm việc thực tế của 2 thành viên | Cả Khoa và Bằng đều hoàn thành đủ 8.0 giờ/người theo bảng phân công và nhật ký `worklog`. | **ĐẠT** |
-| 9. Commit thuộc tài khoản người thực hiện thật, có link SHA thật, PR đã merge | 4 commit riêng biệt theo đúng tác giả (`bawgitne`, `Koha`), PR #2 và #3 đã được merge vào `main`. | **ĐẠT** |
+| 9. Commit thuộc tài khoản người thực hiện thật, có link SHA thật, PR đã merge | Commit phân chia minh bạch theo đúng tác giả (`bawgitne`, `Koha`), có lịch sử PR rõ ràng. | **ĐẠT** |
+| 10. Backup dữ liệu và giải phóng tài nguyên AWS sau nghiệm thu | Đã sao lưu dữ liệu S3/Web/DynamoDB, chạy cleanup an toàn và kiểm chứng verify-cleanup đạt absent=9/9. | **ĐẠT** |
 
 ---
 
