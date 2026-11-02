@@ -74,6 +74,10 @@ Tập kiểm thử độc lập gồm 30 câu (15 câu dev, 15 câu test) bao g�
 - Tài khoản AWS Academy Learner Lab (`550609224402`) áp dụng SCP (Service Control Policy) chặt chẽ. Quyền truy cập vào AWS Billing Console, Cost Explorer và Budgets bị từ chối (`AccessDenied`).
 - Theo nguyên tắc học thuật trung thực, nhóm **không tự bịa số liệu hóa đơn USD**.
 
+**Minh chứng AWS:**
+- [`Week4_AWS_Cost_or_Usage.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_AWS_Cost_or_Usage.png): Thông báo lỗi SCP `AccessDenied` (`Access denied to bcm-pricing-calculator:ListWorkloadEstimates`) trong AWS Cost Explorer / Billing khi truy cập từ tài khoản Learner Lab.
+- [`Week4_AWS_Learner_Lab_Budget.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_AWS_Learner_Lab_Budget.png): Dashboard AWS Academy Learner Lab ghi nhận tình trạng sử dụng ngân sách `$0 of $100` (hoàn toàn không phát sinh chi phí vượt định mức).
+
 ### 4.2. Định mức chi phí lý thuyết ước tính (Theoretical Cost Estimation)
 
 Dựa trên biểu giá chính thức của AWS khu vực `us-east-1`:

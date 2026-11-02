@@ -11,7 +11,7 @@
 
 ---
 
-## 1. Danh sách 10 Minh chứng Ảnh Chụp Màn hình AWS
+## 1. Danh sách 12 Minh chứng Ảnh Chụp Màn hình AWS
 
 | STT | Tên file ảnh | Thành phần AWS | Nội dung minh chứng chi tiết |
 |:---:|---|---|---|
@@ -25,6 +25,8 @@
 | 08 | [`Week4_Lambda_Empty_Input.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Lambda_Empty_Input.png) | AWS Lambda Execution | Kết quả test đầu vào rỗng: `statusCode=400`, thông báo `"Vui lòng nhập câu hỏi"`, duration **1.55 ms**, phản hồi lỗi validation đúng quy chuẩn. |
 | 09 | [`Week4_CloudWatch_Logs.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_CloudWatch_Logs.png) | Amazon CloudWatch Logs | Log stream `/aws/lambda/course-faq-lambda` hiển thị chi tiết 3 lần gọi liên tiếp với các RequestId, Duration (7510.40ms, 303.43ms, 1.55ms) và Max Memory Used **97 MB**. |
 | 10 | [`Week4_Lambda_Metrics.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Lambda_Metrics.png) | CloudWatch Metrics / Lambda Monitor | Đồ thị giám sát Lambda: Invocations sum=3, Errors max=0, Throttles max=0, Success rate min=100%, Concurrent executions max=1. |
+| 11 | [`Week4_AWS_Cost_or_Usage.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_AWS_Cost_or_Usage.png) | AWS Cost & Billing | Giao diện AWS Cost Explorer / Billing ghi nhận lỗi SCP `AccessDenied` (`Access denied to bcm-pricing-calculator:ListWorkloadEstimates`) trong tài khoản AWS Academy Learner Lab. |
+| 12 | [`Week4_AWS_Learner_Lab_Budget.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_AWS_Learner_Lab_Budget.png) | AWS Academy Dashboard | Giao diện AWS Academy Learner Lab Project hiển thị hạn mức sử dụng `"used $0 of $100"`, khẳng định hệ thống hoạt động hoàn toàn trong ngân sách cho phép. |
 
 ---
 
