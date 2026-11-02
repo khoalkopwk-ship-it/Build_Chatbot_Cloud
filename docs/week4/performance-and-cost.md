@@ -27,9 +27,9 @@ Từ kết quả benchmark 12 mẫu liên tục qua endpoint HTTP API Gateway `h
 
 Cần phân biệt rõ hai khái niệm thời gian:
 1. **Lambda Billed Duration (Thời gian xử lý nội bộ AWS):**
-   - **Cold Start (Khởi động lạnh):** Đo được trong ảnh minh chứng `Week4_Lambda_Exact_FAQ017.png` là **7,510.40 ms** (Billed: 7,594 ms, Init duration: 83.24 ms). Nguyên nhân do Lambda phải khởi tạo môi trường Python 3.13, nạp SDK `boto3`, tải file `faq.json` (26.2 KB) từ S3 bucket và xây dựng ma trận từ vựng TF-IDF lần đầu tiên.
-   - **Warm Execution (Thực thi khi container đã ấm):** Đo được trong ảnh minh chứng `Week4_Lambda_Unmatched.png` là **303.43 ms** (Billed: 304 ms). Khi container còn sống trong bộ nhớ, ma trận FAQ đã nạp sẵn, thời gian xử lý vector hóa và ghi log DynamoDB chỉ mất xấp xỉ ~300 ms.
-   - **Validation Error:** Đo được trong `Week4_Lambda_Empty_Input.png` là **1.55 ms** (Billed: 2 ms).
+   - **Cold Start (Khởi động lạnh):** Đo được trong ảnh minh chứng [`Week4_Lambda_Exact_FAQ017.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Lambda_Exact_FAQ017.png) là **7,510.40 ms** (Billed: 7,594 ms, Init duration: 83.24 ms). Nguyên nhân do Lambda phải khởi tạo môi trường Python 3.13, nạp SDK `boto3`, tải file `faq.json` (26.2 KB) từ S3 bucket và xây dựng ma trận từ vựng TF-IDF lần đầu tiên.
+   - **Warm Execution (Thực thi khi container đã ấm):** Đo được trong ảnh minh chứng [`Week4_Lambda_Unmatched.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Lambda_Unmatched.png) là **303.43 ms** (Billed: 304 ms). Khi container còn sống trong bộ nhớ, ma trận FAQ đã nạp sẵn, thời gian xử lý vector hóa và ghi log DynamoDB chỉ mất xấp xỉ ~300 ms.
+   - **Validation Error:** Đo được trong [`Week4_Lambda_Empty_Input.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Lambda_Empty_Input.png) là **1.55 ms** (Billed: 2 ms).
 2. **Client Round-trip Overhead (~500–600 ms):**
    - Khoảng cách địa lý từ Việt Nam tới US East (N. Virginia) tạo ra độ trễ mạng mạng đường truyền vật lý (RTT cáp quang biển) tối thiểu ~220–250 ms mỗi chiều (tổng cộng ~450–500 ms).
    - Thêm thời gian thiết lập TLS/HTTPS handshake và API Gateway chuyển tiếp sự kiện sang Lambda (~50–80 ms).

@@ -77,18 +77,21 @@ Chạy benchmark 12 lượt gọi liên tục bằng script `scripts/week4/bench
 
 ## 4. Danh Mục 10 Minh Chứng Ảnh AWS
 
-Chi tiết danh mục được lập tại [`docs/week4/evidence-index.md`](file:///c:/Users/LENOVO/OneDrive/Videos/cloud/docs/week4/evidence-index.md):
+- **Thư mục bộ ảnh tuần 4 trên GitHub:** https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/tree/main/screenshots/week4  
+- **Bảng mục lục chi tiết minh chứng:** https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/docs/week4/evidence-index.md  
 
-1. `Week4_S3_Backup.png`: Thao tác sao lưu file `faq (1).json` cũ trên S3 bucket `course-faq-data-24110253`.
-2. `Week4_S3_FAQ50_Upload.png`: Upload thành công `faq.json` (26.2 KB, 50 FAQ) lúc 10:17:26 (UTC+7) 31/10/2026.
-3. `Week4_Lambda_General_Configuration.png`: Cấu hình tài nguyên Lambda: RAM 128 MB, Ephemeral storage 512 MB, Timeout 10s.
-4. `Week4_Lambda_Environment_Variables.png`: Cấu hình 4 biến môi trường: `FAQ_BUCKET`, `FAQ_KEY`, `LOG_TABLE`, `SIMILARITY_THRESHOLD=0.60`.
-5. `Week4_Lambda_Test_Event.png`: Cấu hình Test Event đồng bộ `Week4_Test_Exact_FAQ`.
-6. `Week4_Lambda_Exact_FAQ017.png`: Kết quả kiểm thử câu khớp chính xác FAQ017, thời gian cold start 7,510.40 ms.
-7. `Week4_Lambda_Unmatched.png`: Kết quả kiểm thử câu ngoài phạm vi, container warm thực thi trong 303.43 ms.
-8. `Week4_Lambda_Empty_Input.png`: Kết quả kiểm thử đầu vào rỗng (HTTP 400), phản hồi trong 1.55 ms.
-9. `Week4_CloudWatch_Logs.png`: Log stream CloudWatch hiển thị đầy đủ 3 lượt kiểm thử, RequestId và Max Memory 97 MB.
-10. `Week4_Lambda_Metrics.png`: Đồ thị Lambda Monitor: 3 Invocations, 0 Errors, 0 Throttles, 100% Success Rate.
+Chi tiết 10 ảnh minh chứng thực tế trên AWS:
+
+1. [`Week4_S3_Backup.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_S3_Backup.png): Thao tác sao lưu file `faq (1).json` cũ trên S3 bucket `course-faq-data-24110253`.
+2. [`Week4_S3_FAQ50_Upload.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_S3_FAQ50_Upload.png): Upload thành công `faq.json` (26.2 KB, 50 FAQ) lúc 10:17:26 (UTC+7) 31/10/2026.
+3. [`Week4_Lambda_General_Configuration.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Lambda_General_Configuration.png): Cấu hình tài nguyên Lambda: RAM 128 MB, Ephemeral storage 512 MB, Timeout 10s.
+4. [`Week4_Lambda_Environment_Variables.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Lambda_Environment_Variables.png): Cấu hình 4 biến môi trường: `FAQ_BUCKET`, `FAQ_KEY`, `LOG_TABLE`, `SIMILARITY_THRESHOLD=0.60`.
+5. [`Week4_Lambda_Test_Event.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Lambda_Test_Event.png): Cấu hình Test Event đồng bộ `Week4_Test_Exact_FAQ`.
+6. [`Week4_Lambda_Exact_FAQ017.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Lambda_Exact_FAQ017.png): Kết quả kiểm thử câu khớp chính xác FAQ017, thời gian cold start 7,510.40 ms.
+7. [`Week4_Lambda_Unmatched.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Lambda_Unmatched.png): Kết quả kiểm thử câu ngoài phạm vi, container warm thực thi trong 303.43 ms.
+8. [`Week4_Lambda_Empty_Input.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Lambda_Empty_Input.png): Kết quả kiểm thử đầu vào rỗng (HTTP 400), phản hồi trong 1.55 ms.
+9. [`Week4_CloudWatch_Logs.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_CloudWatch_Logs.png): Log stream CloudWatch hiển thị đầy đủ 3 lượt kiểm thử, RequestId và Max Memory 97 MB.
+10. [`Week4_Lambda_Metrics.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Lambda_Metrics.png): Đồ thị Lambda Monitor: 3 Invocations, 0 Errors, 0 Throttles, 100% Success Rate.
 
 ---
 
