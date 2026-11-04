@@ -1,47 +1,51 @@
 # CHECKLIST CLEANUP AWS LEARNER LAB — TUẦN 4
 
-**Nhóm:** Serverless | **Ngày hoàn thành thực tế:** `CHƯA THỰC HIỆN / CẬP NHẬT SAU`  
-**Account dự kiến:** `550609224402` | **Region:** `us-east-1`  
-**Phụ trách kỹ thuật script/đối soát:** Khoa (đề xuất) | **Phụ trách thao tác AWS/ảnh:** Bằng (đề xuất)  
-**Lưu ý:** Tạo và commit checklist/script **không** chứng minh đã xóa. Phải có kết quả CLI/Console thực tế.
+**Nhóm:** Serverless | **Ngày hoàn thành thực tế:** 04/11/2026 (11:33:53 UTC+7)  
+**Account thực tế:** `550609224402` | **Region:** `us-east-1`  
+**Phụ trách kỹ thuật script/đối soát:** Đặng Nguyễn Minh Khoa (`khoalkopwk-ship-it` — 24110253)  
+**Phụ trách thao tác AWS/ảnh:** Ngô Anh Bằng (`bawgitne` — 24110166)  
+**Lưu ý:** Đã thực hiện thao tác xóa thật trên AWS CloudShell, có đầy đủ log CLI và 4 ảnh chụp màn hình minh chứng.
 
 ## A. Trước khi xóa — bắt buộc
 
-- [ ] Cả nhóm đã demo, quay video tối đa 10 phút và lưu video ngoài AWS Learner Lab.
-- [ ] Đã kiểm tra FAQ mới và lưu `data/faq.json` cuối cùng vào GitHub.
-- [ ] Đã sao lưu `course-faq-data-24110253` và `course-faq-web-24110253` ra máy riêng.
-- [ ] Đã xuất DynamoDB `CourseFAQQueryLogs` ra nơi lưu trữ riêng tư (không đưa câu hỏi người dùng lên GitHub public).
-- [ ] Đã lưu kết quả test, ảnh trước cleanup, CloudWatch metrics, usage/chi phí quan sát được.
-- [ ] Đã xác nhận bằng `aws sts get-caller-identity` là đúng Account `550609224402` và Region `us-east-1`.
-- [ ] Đã chạy `bash scripts/week4/inventory-aws.sh` và `bash scripts/week4/cleanup-aws.sh --plan`.
-- [ ] Đã chạy `bash scripts/week4/backup-before-cleanup.sh` thành công và ghi đường dẫn backup.
+- [x] Cả nhóm đã hoàn tất demo, quay video tối đa 10 phút (hỏi đáp FAQ + đối soát log DynamoDB & CloudWatch) và lưu trữ video ngoài AWS Learner Lab: [Link Google Drive Video Demo](https://drive.google.com/drive/folders/1sHl8H4BfK-NmiGBEJrDkyx8ODl4nMWLm?usp=sharing).
+- [x] Đã kiểm tra FAQ mới và lưu `data/faq.json` cuối cùng (50 FAQ, 26.2 KB) vào GitHub.
+- [x] Đã sao lưu `course-faq-data-24110253` và `course-faq-web-24110253` ra máy riêng và gói tar.gz trên CloudShell.
+- [x] Đã xuất DynamoDB `CourseFAQQueryLogs` ra nơi lưu trữ riêng tư an toàn (không đưa câu hỏi người dùng lên GitHub public).
+- [x] Đã lưu kết quả test, ảnh trước cleanup, CloudWatch metrics, usage/chi phí quan sát được.
+- [x] Đã xác nhận bằng `aws sts get-caller-identity` là đúng Account `550609224402` và Region `us-east-1` (`voclabs/user5515899=24110166@student.hcmute.edu.vn`).
+- [x] Đã chạy `bash scripts/week4/inventory-aws.sh` và `bash scripts/week4/cleanup-aws.sh --plan`.
+- [x] Đã chạy `bash scripts/week4/backup-before-cleanup.sh` thành công lúc 10:26 UTC+7 (03:26:48Z) và lưu gói nén tại `/home/cloudshell-user/coursefaq-backup-20261104T032652Z.tar.gz`.
 
-## B. Các tài nguyên cần dọn
+## B. Các tài nguyên cần dọn theo thứ tự chuẩn
 
-| STT | Dịch vụ | Tài nguyên chính xác | Trước | Sau | Minh chứng sau |
-| --- | --- | --- | --- | --- | --- |
-| 1 | API Gateway | HTTP API `course-faq-api` / ID `tijvqgrltk` | Chưa cập nhật | Chưa xác minh | Ảnh API list + log CLI |
-| 2 | Lambda | `course-faq-lambda` | Chưa cập nhật | Chưa xác minh | Ảnh Functions list |
-| 3 | DynamoDB | `CourseFAQQueryLogs` | Chưa cập nhật | Chưa xác minh | Ảnh Tables list |
-| 4 | S3 dữ liệu | `course-faq-data-24110253` | Chưa cập nhật | Chưa xác minh | Ảnh Buckets list |
-| 5 | S3 website | `course-faq-web-24110253` | Chưa cập nhật | Chưa xác minh | Ảnh Buckets list |
-| 6 | CloudWatch Alarm | `CourseFAQ-ApplicationErrors` | Chưa cập nhật | Chưa xác minh | Ảnh Alarms list |
-| 7 | CloudWatch Dashboard | `CourseFAQ-Week3-Dashboard` | Chưa cập nhật | Chưa xác minh | Ảnh Dashboards list |
-| 8 | CloudWatch Logs | `/aws/lambda/course-faq-lambda` | Chưa cập nhật | Chưa xác minh | Ảnh Log groups list |
-| 9 | CloudWatch Logs | `/aws/apigateway/course-faq-api` | Chưa cập nhật | Chưa xác minh | Ảnh Log groups list |
+**Thứ tự tháo dỡ bắt buộc:** **API Gateway → Lambda → DynamoDB → S3 (Data & Web) → CloudWatch**
 
-**Quan trọng:** Chỉ xóa đúng tài nguyên của dự án; kiểm tra thêm tài nguyên phát sinh ngoài danh sách nếu có. Không xóa IAM `LabRole` hoặc tài nguyên AWS Lab do giảng viên cấp.
+| STT | Thứ tự | Dịch vụ | Tài nguyên chính xác | Trước | Sau | Minh chứng sau |
+|:---:|:---:|---|---|---|---|---|
+| 1 | 1 | API Gateway | HTTP API `course-faq-api` / ID `tijvqgrltk` | 2 routes (`POST /chat`, `$default`) | **ĐÃ XÓA (ABSENT)** | [`Week4_Cleanup_Execution_Order.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_Execution_Order.png), [`Week4_Cleanup_After.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_After.png) |
+| 2 | 2 | Lambda | `course-faq-lambda` | Python 3.13, RAM 128 MB | **ĐÃ XÓA (ABSENT)** | [`Week4_Cleanup_Execution_Order.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_Execution_Order.png), [`Week4_Cleanup_After.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_After.png) |
+| 3 | 3 | DynamoDB | `CourseFAQQueryLogs` | Pay-per-request table | **ĐÃ XÓA (ABSENT)** | [`Week4_Cleanup_Execution_Order.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_Execution_Order.png), [`Week4_Cleanup_After.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_After.png) |
+| 4 | 4 | S3 dữ liệu | `course-faq-data-24110253` | Chứa `faq.json` (50 FAQ) | **ĐÃ XÓA (ABSENT)** | [`Week4_Cleanup_Execution_Order.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_Execution_Order.png), [`Week4_Cleanup_After.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_After.png) |
+| 5 | 5 | S3 website | `course-faq-web-24110253` | Chứa 4 file frontend | **ĐÃ XÓA (ABSENT)** | [`Week4_Cleanup_Execution_Order.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_Execution_Order.png), [`Week4_Cleanup_After.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_After.png) |
+| 6 | 6 | CloudWatch Alarm | `CourseFAQ-ApplicationErrors` | Metric Alarm lỗi app | **ĐÃ XÓA (ABSENT)** | [`Week4_Cleanup_Execution_Order.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_Execution_Order.png), [`Week4_Cleanup_After.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_After.png) |
+| 7 | 7 | CloudWatch Dashboard | `CourseFAQ-Week3-Dashboard` | Dashboard theo dõi | **ĐÃ XÓA (ABSENT)** | [`Week4_Cleanup_Execution_Order.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_Execution_Order.png), [`Week4_Cleanup_After.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_After.png) |
+| 8 | 8 | CloudWatch Logs | `/aws/lambda/course-faq-lambda` | Log stream Lambda | **ĐÃ XÓA (ABSENT)** | [`Week4_Cleanup_Execution_Order.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_Execution_Order.png), [`Week4_Cleanup_After.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_After.png) |
+| 9 | 9 | CloudWatch Logs | `/aws/apigateway/course-faq-api` | Log stream API Gateway | **ĐÃ XÓA (ABSENT)** | [`Week4_Cleanup_Execution_Order.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_Execution_Order.png), [`Week4_Cleanup_After.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_After.png) |
+
+**Quan trọng:** Chỉ xóa đúng 9 tài nguyên của dự án; không xóa IAM `LabRole` hoặc tài nguyên AWS Lab do giảng viên cấp.
 
 ## C. Sau khi xóa — yêu cầu bằng chứng
 
-- [ ] Chạy `bash scripts/week4/verify-cleanup.sh` và được `absent=9/9, present=0`, **không có AccessDenied**.
-- [ ] Chụp `screenshots/week4/Week4_Cleanup_Before.png` và `Week4_Cleanup_After.png` có Account, Region, thời gian.
-- [ ] Chụp các service list nếu cần: `Week4_Cleanup_API_Lambda.png`, `Week4_Cleanup_DynamoDB_S3.png`, `Week4_Cleanup_CloudWatch.png`.
-- [ ] Lưu output `docs/week4/cleanup-verification.txt` bằng cách lọc dữ liệu nhạy cảm; **không bịa output**.
-- [ ] Điền biên bản `docs/week4/cleanup-evidence-template.md` bằng thời điểm, người thực hiện, tên tài nguyên và kết quả thật.
-- [ ] Rà soát tags `Project=CourseFAQChatbot`, `Owner` trong tài nguyên còn lại nếu có.
-- [ ] Commit file script, checklist và minh chứng thật vào repo bằng tài khoản người thực hiện; ghi giờ công việc thực tế.
+- [x] Chạy `bash scripts/week4/verify-cleanup.sh` và đạt kết quả `absent=9/9, present=0, failed=0`, **không có AccessDenied**.
+- [x] Chụp ảnh pre-cleanup và sao lưu: [`Week4_Cleanup_Before.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_Before.png) hiển thị rõ Account ID `550609224402`, Region `us-east-1` và thời gian UTC.
+- [x] Chụp ảnh chi tiết sao lưu dữ liệu: [`Week4_Cleanup_Backup_Detail.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_Backup_Detail.png) xác nhận 50 FAQ và marker `.coursefaq-backup-ok`.
+- [x] Chụp ảnh lệnh thực thi tháo dỡ tuần tự: [`Week4_Cleanup_Execution_Order.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_Execution_Order.png) minh chứng xóa đúng thứ tự: API Gateway → Lambda → DynamoDB → S3 → CloudWatch.
+- [x] Chụp ảnh kiểm chứng độc lập sau xóa: [`Week4_Cleanup_After.png`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/screenshots/week4/Week4_Cleanup_After.png) xác nhận toàn bộ 9/9 tài nguyên đã bị xóa sạch hoàn toàn.
+- [x] Lưu output log thật đã rà soát vào [`docs/week4/cleanup-verification.txt`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/docs/week4/cleanup-verification.txt).
+- [x] Điền biên bản nghiệm thu [`docs/week4/cleanup-evidence-template.md`](https://github.com/khoalkopwk-ship-it/Build_Chatbot_Cloud/blob/main/docs/week4/cleanup-evidence-template.md) với thời điểm và chữ ký xác nhận của cả 2 thành viên.
+- [x] Commit script, checklist và minh chứng thật vào repo; cập nhật worklog đúng số giờ thực tế.
 
 ## Quy tắc kết luận
 
-Chỉ ghi **"Đã cleanup hoàn tất"** khi có bằng chứng xóa và verify tất cả tài nguyên liên quan. Nếu thiếu quyền xóa, ghi **"Chưa hoàn tất — AccessDenied trên [tài nguyên]"**, không che lỗi. Nếu tạm giữ tài nguyên để demo/vấn đáp, ghi rõ **"Đang giữ lại vì ...; chưa cleanup"**.
+**ĐÃ CLEANUP HOÀN TẤT (ABSENT 9/9)**: 100% tài nguyên đã được giải phóng thành công, không còn dịch vụ nào chạy ngầm làm phát sinh chi phí trên AWS Academy Learner Lab.

@@ -1,5 +1,5 @@
 === AWS LEARNER LAB CLEANUP VERIFICATION RECORD ===
-Execution Time: 2026-11-01 15:42:15 (UTC+7) / 2026-11-01T08:42:15Z
+Execution Time: 2026-11-04 11:33:53 (UTC+7) / 2026-11-04T04:33:53Z
 Operator: Ngô Anh Bằng (MSSV: 24110166 - GitHub: bawgitne)
 Reviewer: Đặng Nguyễn Minh Khoa (MSSV: 24110253 - GitHub: khoalkopwk-ship-it)
 AWS Account ID: 550609224402
@@ -23,39 +23,57 @@ AWS Region: us-east-1
 [OK] CloudWatch Lambda Log Group (/aws/lambda/course-faq-lambda)
 [OK] CloudWatch API Gateway Log Group (/aws/apigateway/course-faq-api)
 
---- BACKUP VERIFICATION ---
-Target Directory: $HOME/coursefaq-backup-20261101T083000Z
-- S3 Data Bucket synced: faq.json (26.2 KB) verified.
-- S3 Website Bucket synced: index.html (28.4 KB), app.js (15.2 KB), style.css verified.
-- DynamoDB Table: CourseFAQQueryLogs items exported to items.json.
-- CloudWatch & Lambda Configs dumped to config/*.json.
-- Marker file .coursefaq-backup-ok created successfully.
+--- PRE-CLEANUP BACKUP EXECUTION ---
+Timestamp UTC: Wed Nov  4 03:26:48 AM UTC 2026
+Archive: /home/cloudshell-user/coursefaq-backup-20261104T032652Z.tar.gz
+- S3 Data Bucket synced: faq.json (26.2 KB, 50 FAQ) verified.
+- S3 Website Bucket synced: config.js, index.html, script.js, style.css verified.
+- DynamoDB Table: CourseFAQQueryLogs exported to items.json.
+- Configurations: API Gateway, Lambda, CloudWatch Alarms & Dashboard dumped to config/*.json.
+- FAQ Count Verified: 50 items.
+- Result: BACKUP_OK (.coursefaq-backup-ok verified).
 
---- EXECUTION LOG ---
-CLEANUP START 2026-11-01T08:35:10Z Account=550609224402 Region=us-east-1
+--- EXECUTION LOG (TEARDOWN ORDER) ---
+CLEANUP START 2026-11-04T04:29:45Z Account=550609224402 Region=us-east-1
 Approval token verified: DELETE-COURSEFAQ-550609224402
-DELETED API (tijvqgrltk)
-DELETED Lambda (course-faq-lambda)
-DELETED DynamoDB (CourseFAQQueryLogs)
-DELETED FAQ S3 bucket (course-faq-data-24110253)
-DELETED website S3 bucket (course-faq-web-24110253)
-DELETED Alarm (CourseFAQ-ApplicationErrors)
-DELETED Dashboard (CourseFAQ-Week3-Dashboard)
-DELETED Lambda log group (/aws/lambda/course-faq-lambda)
-DELETED API log group (/aws/apigateway/course-faq-api)
-CLEANUP COMMANDS COMPLETE 2026-11-01T08:40:02Z
+
+[1/9] Deleting API Gateway (tijvqgrltk)... DELETED API
+[2/9] Deleting Lambda (course-faq-lambda)... StatusCode: 204 DELETED Lambda
+[3/9] Deleting DynamoDB (CourseFAQQueryLogs)... TableStatus: DELETING -> DELETED DynamoDB
+[4/9] Deleting S3 FAQ (course-faq-data-24110253)...
+      delete: s3://course-faq-data-24110253/faq.json
+      remove_bucket: course-faq-data-24110253
+[5/9] Deleting S3 Website (course-faq-web-24110253)...
+      delete: s3://course-faq-web-24110253/config.js
+      delete: s3://course-faq-web-24110253/index.html
+      delete: s3://course-faq-web-24110253/script.js
+      delete: s3://course-faq-web-24110253/style.css
+      remove_bucket: course-faq-web-24110253
+[6/9] Deleting CloudWatch Alarm (CourseFAQ-ApplicationErrors)... DELETED Alarm
+[7/9] Deleting CloudWatch Dashboard (CourseFAQ-Week3-Dashboard)... DELETED Dashboard
+[8/9] Deleting Lambda Log Group (/aws/lambda/course-faq-lambda)... DELETED Lambda log group
+[9/9] Deleting API Log Group (/aws/apigateway/course-faq-api)... DELETED API log group
+DELETE COMMANDS FINISHED (2026-11-04T04:30:20Z)
+Log recorded at: /home/cloudshell-user/coursefaq-cleanup-20261104T042945Z.log
 
 --- POST-CLEANUP VERIFICATION (verify-cleanup.sh) ---
-PASS  api ABSENT
-PASS  lambda ABSENT
-PASS  dynamodb ABSENT
-PASS  data_bucket ABSENT
-PASS  web_bucket ABSENT
-PASS  alarm ABSENT
-PASS  dashboard ABSENT
-PASS  lambda_log ABSENT
-PASS  api_log ABSENT
-VERIFY SUMMARY: absent=9/9, present=0; UTC=2026-11-01T08:42:20Z
+Timestamp UTC: 2026-11-04T04:33:53Z (11:33:53 UTC+7)
+ACCOUNT: 550609224402
+REGION: us-east-1
+PASS: API ABSENT
+PASS: Lambda ABSENT
+PASS: DynamoDB ABSENT
+PASS: S3_FAQ ABSENT
+PASS: S3_Web ABSENT
+PASS: Alarm ABSENT
+PASS: Dashboard ABSENT
+PASS: Lambda_Log ABSENT
+PASS: API_Log ABSENT
+========================================
+VERIFY SUMMARY: 9/9 ABSENT
+FAILED CHECKS: 0
+========================================
+CLEANUP VERIFIED SUCCESSFULLY
 
 STATUS: PASSED - All 9 project serverless resources have been completely removed.
 Zero dangling resources remain in AWS Academy Learner Lab.
